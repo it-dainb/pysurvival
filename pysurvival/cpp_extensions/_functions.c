@@ -355,33 +355,19 @@
   #endif
 #endif
 
-#ifndef __cplusplus
-  #error "Cython files generated with the C++ option must be compiled with a C++ compiler."
-#endif
 #ifndef CYTHON_INLINE
   #if defined(__clang__)
     #define CYTHON_INLINE __inline__ __attribute__ ((__unused__))
-  #else
+  #elif defined(__GNUC__)
+    #define CYTHON_INLINE __inline__
+  #elif defined(_MSC_VER)
+    #define CYTHON_INLINE __inline
+  #elif defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
     #define CYTHON_INLINE inline
+  #else
+    #define CYTHON_INLINE
   #endif
 #endif
-template<typename T>
-void __Pyx_call_destructor(T& x) {
-    x.~T();
-}
-template<typename T>
-class __Pyx_FakeReference {
-  public:
-    __Pyx_FakeReference() : ptr(NULL) { }
-    __Pyx_FakeReference(const T& ref) : ptr(const_cast<T*>(&ref)) { }
-    T *operator->() { return ptr; }
-    T *operator&() { return ptr; }
-    operator T&() { return *ptr; }
-    template<typename U> bool operator ==(U other) { return *ptr == other; }
-    template<typename U> bool operator !=(U other) { return *ptr != other; }
-  private:
-    T *ptr;
-};
 
 #define __PYX_BUILD_PY_SSIZE_T "n"
 #define CYTHON_FORMAT_SSIZE_T "z"
@@ -758,8 +744,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE___metrics
-#define __PYX_HAVE_API___metrics
+#define __PYX_HAVE___functions
+#define __PYX_HAVE_API___functions
 /* Early includes */
 #include "ios"
 #include "new"
@@ -783,7 +769,7 @@ static CYTHON_INLINE float __PYX_NAN() {
     
 #include <map>
 #include <set>
-#include "metrics.h"
+#include "functions.h"
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -993,24 +979,11 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "_metrics.pyx",
+  "_functions.pyx",
   "stringsource",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_opt_args_8_metrics__concordance_index;
-
-/* "_metrics.pyx":30
- * 
- * 
- * cpdef map[int, double] _concordance_index(vector[double] risk,             # <<<<<<<<<<<<<<
- * 										 vector[double] T,
- * 										 vector[double] E,
- */
-struct __pyx_opt_args_8_metrics__concordance_index {
-  int __pyx_n;
-  bool include_ties;
-};
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -1273,102 +1246,75 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'libcpp' */
 
-/* Module declarations from '_metrics' */
-static std::map<int,double>  __pyx_f_8_metrics__concordance_index(std::vector<double> , std::vector<double> , std::vector<double> , int __pyx_skip_dispatch, struct __pyx_opt_args_8_metrics__concordance_index *__pyx_optional_args); /*proto*/
-static std::map<int,std::vector<double> >  __pyx_f_8_metrics__brier_score(std::vector<std::vector<double> > , std::vector<double> , std::vector<double> , double, std::vector<double> , std::vector<std::pair<double,double> > , bool, int __pyx_skip_dispatch); /*proto*/
-static std::map<int,std::vector<double> >  __pyx_f_8_metrics__timeROC(std::vector<double> , std::vector<double> , std::vector<double> , double, int __pyx_skip_dispatch); /*proto*/
+/* Module declarations from '_functions' */
+static std::vector<std::pair<double,double> >  __pyx_f_10_functions__get_time_buckets(std::vector<double> , int __pyx_skip_dispatch); /*proto*/
+static int __pyx_f_10_functions__argmin_buckets(double, std::vector<std::pair<double,double> > , int __pyx_skip_dispatch); /*proto*/
+static std::vector<double>  __pyx_f_10_functions__logrankScores(std::vector<double> , std::vector<double> , int __pyx_skip_dispatch); /*proto*/
 static std::vector<double>  __pyx_convert_vector_from_py_double(PyObject *); /*proto*/
-static std::vector<std::vector<double> >  __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(PyObject *); /*proto*/
 static std::pair<double,double>  __pyx_convert_pair_from_py_double__and_double(PyObject *); /*proto*/
 static std::vector<std::pair<double,double> >  __pyx_convert_vector_from_py_std_3a__3a_pair_3c_double_2c_double_3e___(PyObject *); /*proto*/
-static PyObject *__pyx_convert_map_to_py_int____double(std::map<int,double>  const &); /*proto*/
+static PyObject *__pyx_convert_pair_to_py_double____double(std::pair<double,double>  const &); /*proto*/
+static PyObject *__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(const std::vector<std::pair<double,double> >  &); /*proto*/
 static PyObject *__pyx_convert_vector_to_py_double(const std::vector<double>  &); /*proto*/
-static PyObject *__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(std::map<int,std::vector<double> >  const &); /*proto*/
-#define __Pyx_MODULE_NAME "_metrics"
-extern int __pyx_module_is_main__metrics;
-int __pyx_module_is_main__metrics = 0;
+#define __Pyx_MODULE_NAME "_functions"
+extern int __pyx_module_is_main__functions;
+int __pyx_module_is_main__functions = 0;
 
-/* Implementation of '_metrics' */
+/* Implementation of '_functions' */
 static PyObject *__pyx_builtin_range;
-static const char __pyx_k_E[] = "E";
-static const char __pyx_k_T[] = "T";
-static const char __pyx_k_t[] = "t";
+static const char __pyx_k_x[] = "x";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
-static const char __pyx_k_risk[] = "risk";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_time[] = "time";
 static const char __pyx_k_range[] = "range";
-static const char __pyx_k_t_max[] = "t_max";
-static const char __pyx_k_times[] = "times";
-static const char __pyx_k_Survival[] = "Survival";
-static const char __pyx_k_include_ties[] = "include_ties";
-static const char __pyx_k_time_buckets[] = "time_buckets";
-static const char __pyx_k_use_mean_point[] = "use_mean_point";
+static const char __pyx_k_status[] = "status";
+static const char __pyx_k_buckets[] = "buckets";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static PyObject *__pyx_n_s_E;
-static PyObject *__pyx_n_s_Survival;
-static PyObject *__pyx_n_s_T;
+static PyObject *__pyx_n_s_buckets;
 static PyObject *__pyx_n_s_cline_in_traceback;
-static PyObject *__pyx_n_s_include_ties;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_range;
-static PyObject *__pyx_n_s_risk;
-static PyObject *__pyx_n_s_t;
-static PyObject *__pyx_n_s_t_max;
+static PyObject *__pyx_n_s_status;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_time_buckets;
-static PyObject *__pyx_n_s_times;
-static PyObject *__pyx_n_s_use_mean_point;
-static PyObject *__pyx_pf_8_metrics__concordance_index(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_risk, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, bool __pyx_v_include_ties); /* proto */
-static PyObject *__pyx_pf_8_metrics_2_brier_score(CYTHON_UNUSED PyObject *__pyx_self, std::vector<std::vector<double> >  __pyx_v_Survival, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, double __pyx_v_t_max, std::vector<double>  __pyx_v_times, std::vector<std::pair<double,double> >  __pyx_v_time_buckets, bool __pyx_v_use_mean_point); /* proto */
-static PyObject *__pyx_pf_8_metrics_4_timeROC(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_risk, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, double __pyx_v_t); /* proto */
+static PyObject *__pyx_n_s_time;
+static PyObject *__pyx_n_s_x;
+static PyObject *__pyx_pf_10_functions__get_time_buckets(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_times); /* proto */
+static PyObject *__pyx_pf_10_functions_2_argmin_buckets(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_x, std::vector<std::pair<double,double> >  __pyx_v_buckets); /* proto */
+static PyObject *__pyx_pf_10_functions_4_logrankScores(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_time, std::vector<double>  __pyx_v_status); /* proto */
 /* Late includes */
 
-/* "_metrics.pyx":30
+/* "_functions.pyx":31
+ *                                       vector[double] status);
  * 
+ * cpdef vector[pair[double, double] ] _get_time_buckets(vector[double] times):             # <<<<<<<<<<<<<<
+ *     return get_time_buckets(times)
  * 
- * cpdef map[int, double] _concordance_index(vector[double] risk,             # <<<<<<<<<<<<<<
- * 										 vector[double] T,
- * 										 vector[double] E,
  */
 
-static PyObject *__pyx_pw_8_metrics_1_concordance_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static std::map<int,double>  __pyx_f_8_metrics__concordance_index(std::vector<double>  __pyx_v_risk, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_8_metrics__concordance_index *__pyx_optional_args) {
-
-  /* "_metrics.pyx":33
- * 										 vector[double] T,
- * 										 vector[double] E,
- * 										 bool include_ties=True):             # <<<<<<<<<<<<<<
- * 	# results[c_index] = C;
- * 	# results[nb_pairs] = 2*weightedPairs;
- */
-  bool __pyx_v_include_ties = ((bool)1);
-  std::map<int,double>  __pyx_r;
+static PyObject *__pyx_pw_10_functions_1_get_time_buckets(PyObject *__pyx_self, PyObject *__pyx_arg_times); /*proto*/
+static std::vector<std::pair<double,double> >  __pyx_f_10_functions__get_time_buckets(std::vector<double>  __pyx_v_times, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  std::vector<std::pair<double,double> >  __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("_concordance_index", 0);
-  if (__pyx_optional_args) {
-    if (__pyx_optional_args->__pyx_n > 0) {
-      __pyx_v_include_ties = __pyx_optional_args->include_ties;
-    }
-  }
+  __Pyx_RefNannySetupContext("_get_time_buckets", 0);
 
-  /* "_metrics.pyx":37
- * 	# results[nb_pairs] = 2*weightedPairs;
- * 	# results[nb_concordant_pairs] = 2*weightedConcPairs;
- * 	return concordance_index(risk,  T,  E, include_ties)             # <<<<<<<<<<<<<<
+  /* "_functions.pyx":32
+ * 
+ * cpdef vector[pair[double, double] ] _get_time_buckets(vector[double] times):
+ *     return get_time_buckets(times)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_r = concordance_index(__pyx_v_risk, __pyx_v_T, __pyx_v_E, __pyx_v_include_ties);
+  __pyx_r = get_time_buckets(__pyx_v_times);
   goto __pyx_L0;
 
-  /* "_metrics.pyx":30
+  /* "_functions.pyx":31
+ *                                       vector[double] status);
  * 
+ * cpdef vector[pair[double, double] ] _get_time_buckets(vector[double] times):             # <<<<<<<<<<<<<<
+ *     return get_time_buckets(times)
  * 
- * cpdef map[int, double] _concordance_index(vector[double] risk,             # <<<<<<<<<<<<<<
- * 										 vector[double] T,
- * 										 vector[double] E,
  */
 
   /* function exit code */
@@ -1378,312 +1324,41 @@ static std::map<int,double>  __pyx_f_8_metrics__concordance_index(std::vector<do
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8_metrics_1_concordance_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_8_metrics_1_concordance_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  std::vector<double>  __pyx_v_risk;
-  std::vector<double>  __pyx_v_T;
-  std::vector<double>  __pyx_v_E;
-  bool __pyx_v_include_ties;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("_concordance_index (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_risk,&__pyx_n_s_T,&__pyx_n_s_E,&__pyx_n_s_include_ties,0};
-    PyObject* values[4] = {0,0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_risk)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_T)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_concordance_index", 0, 3, 4, 1); __PYX_ERR(0, 30, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_E)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_concordance_index", 0, 3, 4, 2); __PYX_ERR(0, 30, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  3:
-        if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_include_ties);
-          if (value) { values[3] = value; kw_args--; }
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_concordance_index") < 0)) __PYX_ERR(0, 30, __pyx_L3_error)
-      }
-    } else {
-      switch (PyTuple_GET_SIZE(__pyx_args)) {
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-    }
-    __pyx_v_risk = __pyx_convert_vector_from_py_double(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L3_error)
-    __pyx_v_T = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L3_error)
-    __pyx_v_E = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
-    if (values[3]) {
-      __pyx_v_include_ties = __Pyx_PyObject_IsTrue(values[3]); if (unlikely((__pyx_v_include_ties == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 33, __pyx_L3_error)
-    } else {
-
-      /* "_metrics.pyx":33
- * 										 vector[double] T,
- * 										 vector[double] E,
- * 										 bool include_ties=True):             # <<<<<<<<<<<<<<
- * 	# results[c_index] = C;
- * 	# results[nb_pairs] = 2*weightedPairs;
- */
-      __pyx_v_include_ties = ((bool)1);
-    }
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_concordance_index", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 30, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("_metrics._concordance_index", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8_metrics__concordance_index(__pyx_self, __pyx_v_risk, __pyx_v_T, __pyx_v_E, __pyx_v_include_ties);
-
-  /* "_metrics.pyx":30
- * 
- * 
- * cpdef map[int, double] _concordance_index(vector[double] risk,             # <<<<<<<<<<<<<<
- * 										 vector[double] T,
- * 										 vector[double] E,
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_8_metrics__concordance_index(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_risk, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, bool __pyx_v_include_ties) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  std::map<int,double>  __pyx_t_1;
-  struct __pyx_opt_args_8_metrics__concordance_index __pyx_t_2;
-  PyObject *__pyx_t_3 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("_concordance_index", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 1;
-  __pyx_t_2.include_ties = __pyx_v_include_ties;
-  __pyx_t_1 = __pyx_f_8_metrics__concordance_index(__pyx_v_risk, __pyx_v_T, __pyx_v_E, 0, &__pyx_t_2); 
-  __pyx_t_3 = __pyx_convert_map_to_py_int____double(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_r = __pyx_t_3;
-  __pyx_t_3 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("_metrics._concordance_index", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "_metrics.pyx":41
- * 
- * 
- * cpdef map[int, vector[double] ] _brier_score(vector[vector[double]] Survival,             # <<<<<<<<<<<<<<
- * 									vector[double] T,
- * 									vector[double] E,
- */
-
-static PyObject *__pyx_pw_8_metrics_3_brier_score(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static std::map<int,std::vector<double> >  __pyx_f_8_metrics__brier_score(std::vector<std::vector<double> >  __pyx_v_Survival, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, double __pyx_v_t_max, std::vector<double>  __pyx_v_times, std::vector<std::pair<double,double> >  __pyx_v_time_buckets, bool __pyx_v_use_mean_point, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  std::map<int,std::vector<double> >  __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("_brier_score", 0);
-
-  /* "_metrics.pyx":50
- * 	# results[times] = times_to_consider;
- * 	# results[brier_scores] = bs;
- * 	return brier_score(Survival, T, E, t_max, times, time_buckets, use_mean_point)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = brier_score(__pyx_v_Survival, __pyx_v_T, __pyx_v_E, __pyx_v_t_max, __pyx_v_times, __pyx_v_time_buckets, __pyx_v_use_mean_point);
-  goto __pyx_L0;
-
-  /* "_metrics.pyx":41
- * 
- * 
- * cpdef map[int, vector[double] ] _brier_score(vector[vector[double]] Survival,             # <<<<<<<<<<<<<<
- * 									vector[double] T,
- * 									vector[double] E,
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_8_metrics_3_brier_score(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_8_metrics_3_brier_score(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  std::vector<std::vector<double> >  __pyx_v_Survival;
-  std::vector<double>  __pyx_v_T;
-  std::vector<double>  __pyx_v_E;
-  double __pyx_v_t_max;
+static PyObject *__pyx_pw_10_functions_1_get_time_buckets(PyObject *__pyx_self, PyObject *__pyx_arg_times); /*proto*/
+static PyObject *__pyx_pw_10_functions_1_get_time_buckets(PyObject *__pyx_self, PyObject *__pyx_arg_times) {
   std::vector<double>  __pyx_v_times;
-  std::vector<std::pair<double,double> >  __pyx_v_time_buckets;
-  bool __pyx_v_use_mean_point;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("_brier_score (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_Survival,&__pyx_n_s_T,&__pyx_n_s_E,&__pyx_n_s_t_max,&__pyx_n_s_times,&__pyx_n_s_time_buckets,&__pyx_n_s_use_mean_point,0};
-    PyObject* values[7] = {0,0,0,0,0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
-        CYTHON_FALLTHROUGH;
-        case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
-        CYTHON_FALLTHROUGH;
-        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
-        CYTHON_FALLTHROUGH;
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_Survival)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_T)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, 1); __PYX_ERR(0, 41, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_E)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, 2); __PYX_ERR(0, 41, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  3:
-        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_t_max)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, 3); __PYX_ERR(0, 41, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  4:
-        if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_times)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, 4); __PYX_ERR(0, 41, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  5:
-        if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_time_buckets)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, 5); __PYX_ERR(0, 41, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  6:
-        if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_use_mean_point)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, 6); __PYX_ERR(0, 41, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_brier_score") < 0)) __PYX_ERR(0, 41, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 7) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-      values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
-      values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
-      values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
-    }
-    __pyx_v_Survival = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
-    __pyx_v_T = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L3_error)
-    __pyx_v_E = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
-    __pyx_v_t_max = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_t_max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L3_error)
-    __pyx_v_times = __pyx_convert_vector_from_py_double(values[4]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L3_error)
-    __pyx_v_time_buckets = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_double_2c_double_3e___(values[5]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L3_error)
-    __pyx_v_use_mean_point = __Pyx_PyObject_IsTrue(values[6]); if (unlikely((__pyx_v_use_mean_point == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
+  __Pyx_RefNannySetupContext("_get_time_buckets (wrapper)", 0);
+  assert(__pyx_arg_times); {
+    __pyx_v_times = __pyx_convert_vector_from_py_double(__pyx_arg_times); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_brier_score", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 41, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("_metrics._brier_score", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("_functions._get_time_buckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8_metrics_2_brier_score(__pyx_self, __pyx_v_Survival, __pyx_v_T, __pyx_v_E, __pyx_v_t_max, __pyx_v_times, __pyx_v_time_buckets, __pyx_v_use_mean_point);
+  __pyx_r = __pyx_pf_10_functions__get_time_buckets(__pyx_self, ((std::vector<double> )__pyx_v_times));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8_metrics_2_brier_score(CYTHON_UNUSED PyObject *__pyx_self, std::vector<std::vector<double> >  __pyx_v_Survival, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, double __pyx_v_t_max, std::vector<double>  __pyx_v_times, std::vector<std::pair<double,double> >  __pyx_v_time_buckets, bool __pyx_v_use_mean_point) {
+static PyObject *__pyx_pf_10_functions__get_time_buckets(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_times) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("_brier_score", 0);
+  __Pyx_RefNannySetupContext("_get_time_buckets", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(__pyx_f_8_metrics__brier_score(__pyx_v_Survival, __pyx_v_T, __pyx_v_E, __pyx_v_t_max, __pyx_v_times, __pyx_v_time_buckets, __pyx_v_use_mean_point, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(__pyx_f_10_functions__get_time_buckets(__pyx_v_times, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1692,7 +1367,7 @@ static PyObject *__pyx_pf_8_metrics_2_brier_score(CYTHON_UNUSED PyObject *__pyx_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("_metrics._brier_score", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("_functions._get_time_buckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1700,34 +1375,36 @@ static PyObject *__pyx_pf_8_metrics_2_brier_score(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "_metrics.pyx":53
+/* "_functions.pyx":35
  * 
  * 
- * cpdef map[int, vector[double] ] _timeROC(vector[double] risk,             # <<<<<<<<<<<<<<
- * 										 vector[double] T,
- * 										 vector[double] E,
+ * cpdef int _argmin_buckets(double x, vector[pair[double, double] ] buckets):             # <<<<<<<<<<<<<<
+ *     return argmin_buckets(x, buckets)
+ * 
  */
 
-static PyObject *__pyx_pw_8_metrics_5_timeROC(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static std::map<int,std::vector<double> >  __pyx_f_8_metrics__timeROC(std::vector<double>  __pyx_v_risk, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, double __pyx_v_t, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  std::map<int,std::vector<double> >  __pyx_r;
+static PyObject *__pyx_pw_10_functions_3_argmin_buckets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_f_10_functions__argmin_buckets(double __pyx_v_x, std::vector<std::pair<double,double> >  __pyx_v_buckets, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("_timeROC", 0);
+  __Pyx_RefNannySetupContext("_argmin_buckets", 0);
 
-  /* "_metrics.pyx":59
- * 	# results[TP] = TP_vector;
- * 	# results[FP] = FP_vector;
- * 	return time_ROC(risk,  T, E, t)             # <<<<<<<<<<<<<<
+  /* "_functions.pyx":36
+ * 
+ * cpdef int _argmin_buckets(double x, vector[pair[double, double] ] buckets):
+ *     return argmin_buckets(x, buckets)             # <<<<<<<<<<<<<<
+ * 
+ * cpdef vector[double] _logrankScores(vector[double] time,  vector[double] status):
  */
-  __pyx_r = time_ROC(__pyx_v_risk, __pyx_v_T, __pyx_v_E, __pyx_v_t);
+  __pyx_r = argmin_buckets(__pyx_v_x, __pyx_v_buckets);
   goto __pyx_L0;
 
-  /* "_metrics.pyx":53
+  /* "_functions.pyx":35
  * 
  * 
- * cpdef map[int, vector[double] ] _timeROC(vector[double] risk,             # <<<<<<<<<<<<<<
- * 										 vector[double] T,
- * 										 vector[double] E,
+ * cpdef int _argmin_buckets(double x, vector[pair[double, double] ] buckets):             # <<<<<<<<<<<<<<
+ *     return argmin_buckets(x, buckets)
+ * 
  */
 
   /* function exit code */
@@ -1737,29 +1414,23 @@ static std::map<int,std::vector<double> >  __pyx_f_8_metrics__timeROC(std::vecto
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8_metrics_5_timeROC(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_8_metrics_5_timeROC(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  std::vector<double>  __pyx_v_risk;
-  std::vector<double>  __pyx_v_T;
-  std::vector<double>  __pyx_v_E;
-  double __pyx_v_t;
+static PyObject *__pyx_pw_10_functions_3_argmin_buckets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_10_functions_3_argmin_buckets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_x;
+  std::vector<std::pair<double,double> >  __pyx_v_buckets;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("_timeROC (wrapper)", 0);
+  __Pyx_RefNannySetupContext("_argmin_buckets (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_risk,&__pyx_n_s_T,&__pyx_n_s_E,&__pyx_n_s_t,0};
-    PyObject* values[4] = {0,0,0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_x,&__pyx_n_s_buckets,0};
+    PyObject* values[2] = {0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -1770,68 +1441,52 @@ static PyObject *__pyx_pw_8_metrics_5_timeROC(PyObject *__pyx_self, PyObject *__
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_risk)) != 0)) kw_args--;
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_x)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_T)) != 0)) kw_args--;
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_buckets)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_timeROC", 1, 4, 4, 1); __PYX_ERR(0, 53, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_E)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_timeROC", 1, 4, 4, 2); __PYX_ERR(0, 53, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  3:
-        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_t)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("_timeROC", 1, 4, 4, 3); __PYX_ERR(0, 53, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_argmin_buckets", 1, 2, 2, 1); __PYX_ERR(0, 35, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_timeROC") < 0)) __PYX_ERR(0, 53, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_argmin_buckets") < 0)) __PYX_ERR(0, 35, __pyx_L3_error)
       }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
-    __pyx_v_risk = __pyx_convert_vector_from_py_double(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
-    __pyx_v_T = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L3_error)
-    __pyx_v_E = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
-    __pyx_v_t = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    __pyx_v_x = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_x == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
+    __pyx_v_buckets = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_double_2c_double_3e___(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_timeROC", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 53, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_argmin_buckets", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 35, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("_metrics._timeROC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("_functions._argmin_buckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8_metrics_4_timeROC(__pyx_self, __pyx_v_risk, __pyx_v_T, __pyx_v_E, __pyx_v_t);
+  __pyx_r = __pyx_pf_10_functions_2_argmin_buckets(__pyx_self, __pyx_v_x, __pyx_v_buckets);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8_metrics_4_timeROC(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_risk, std::vector<double>  __pyx_v_T, std::vector<double>  __pyx_v_E, double __pyx_v_t) {
+static PyObject *__pyx_pf_10_functions_2_argmin_buckets(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_x, std::vector<std::pair<double,double> >  __pyx_v_buckets) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("_timeROC", 0);
+  __Pyx_RefNannySetupContext("_argmin_buckets", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(__pyx_f_8_metrics__timeROC(__pyx_v_risk, __pyx_v_T, __pyx_v_E, __pyx_v_t, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_10_functions__argmin_buckets(__pyx_v_x, __pyx_v_buckets, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1840,7 +1495,135 @@ static PyObject *__pyx_pf_8_metrics_4_timeROC(CYTHON_UNUSED PyObject *__pyx_self
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("_metrics._timeROC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("_functions._argmin_buckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "_functions.pyx":38
+ *     return argmin_buckets(x, buckets)
+ * 
+ * cpdef vector[double] _logrankScores(vector[double] time,  vector[double] status):             # <<<<<<<<<<<<<<
+ *     return logrankScores(time, status)
+ * 
+ */
+
+static PyObject *__pyx_pw_10_functions_5_logrankScores(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static std::vector<double>  __pyx_f_10_functions__logrankScores(std::vector<double>  __pyx_v_time, std::vector<double>  __pyx_v_status, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  std::vector<double>  __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("_logrankScores", 0);
+
+  /* "_functions.pyx":39
+ * 
+ * cpdef vector[double] _logrankScores(vector[double] time,  vector[double] status):
+ *     return logrankScores(time, status)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_r = logrankScores(__pyx_v_time, __pyx_v_status);
+  goto __pyx_L0;
+
+  /* "_functions.pyx":38
+ *     return argmin_buckets(x, buckets)
+ * 
+ * cpdef vector[double] _logrankScores(vector[double] time,  vector[double] status):             # <<<<<<<<<<<<<<
+ *     return logrankScores(time, status)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10_functions_5_logrankScores(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_10_functions_5_logrankScores(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  std::vector<double>  __pyx_v_time;
+  std::vector<double>  __pyx_v_status;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("_logrankScores (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_time,&__pyx_n_s_status,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_time)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_status)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("_logrankScores", 1, 2, 2, 1); __PYX_ERR(0, 38, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_logrankScores") < 0)) __PYX_ERR(0, 38, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_time = __pyx_convert_vector_from_py_double(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
+    __pyx_v_status = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("_logrankScores", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 38, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("_functions._logrankScores", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_10_functions_4_logrankScores(__pyx_self, __pyx_v_time, __pyx_v_status);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10_functions_4_logrankScores(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_time, std::vector<double>  __pyx_v_status) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("_logrankScores", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_convert_vector_to_py_double(__pyx_f_10_functions__logrankScores(__pyx_v_time, __pyx_v_status, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("_functions._logrankScores", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1963,120 +1746,6 @@ static std::vector<double>  __pyx_convert_vector_from_py_double(PyObject *__pyx_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("vector.from_py.__pyx_convert_vector_from_py_double", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_pretend_to_initialize(&__pyx_r);
-  __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_item);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static std::vector<std::vector<double> >  __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(PyObject *__pyx_v_o) {
-  std::vector<std::vector<double> >  __pyx_v_v;
-  PyObject *__pyx_v_item = NULL;
-  std::vector<std::vector<double> >  __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  Py_ssize_t __pyx_t_2;
-  PyObject *(*__pyx_t_3)(PyObject *);
-  PyObject *__pyx_t_4 = NULL;
-  std::vector<double>  __pyx_t_5;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___", 0);
-
-  /* "vector.from_py":47
- * cdef vector[X] __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(object o) except *:
- *     cdef vector[X] v
- *     for item in o:             # <<<<<<<<<<<<<<
- *         v.push_back(<X>item)
- *     return v
- */
-  if (likely(PyList_CheckExact(__pyx_v_o)) || PyTuple_CheckExact(__pyx_v_o)) {
-    __pyx_t_1 = __pyx_v_o; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
-    __pyx_t_3 = NULL;
-  } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_o); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 47, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 47, __pyx_L1_error)
-  }
-  for (;;) {
-    if (likely(!__pyx_t_3)) {
-      if (likely(PyList_CheckExact(__pyx_t_1))) {
-        if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(1, 47, __pyx_L1_error)
-        #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 47, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        #endif
-      } else {
-        if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(1, 47, __pyx_L1_error)
-        #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 47, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        #endif
-      }
-    } else {
-      __pyx_t_4 = __pyx_t_3(__pyx_t_1);
-      if (unlikely(!__pyx_t_4)) {
-        PyObject* exc_type = PyErr_Occurred();
-        if (exc_type) {
-          if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(1, 47, __pyx_L1_error)
-        }
-        break;
-      }
-      __Pyx_GOTREF(__pyx_t_4);
-    }
-    __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_4);
-    __pyx_t_4 = 0;
-
-    /* "vector.from_py":48
- *     cdef vector[X] v
- *     for item in o:
- *         v.push_back(<X>item)             # <<<<<<<<<<<<<<
- *     return v
- * 
- */
-    __pyx_t_5 = __pyx_convert_vector_from_py_double(__pyx_v_item); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 48, __pyx_L1_error)
-    __pyx_v_v.push_back(((std::vector<double> )__pyx_t_5));
-
-    /* "vector.from_py":47
- * cdef vector[X] __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(object o) except *:
- *     cdef vector[X] v
- *     for item in o:             # <<<<<<<<<<<<<<
- *         v.push_back(<X>item)
- *     return v
- */
-  }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "vector.from_py":49
- *     for item in o:
- *         v.push_back(<X>item)
- *     return v             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = __pyx_v_v;
-  goto __pyx_L0;
-
-  /* "vector.from_py":45
- * 
- * @cname("__pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___")
- * cdef vector[X] __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(object o) except *:             # <<<<<<<<<<<<<<
- *     cdef vector[X] v
- *     for item in o:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("vector.from_py.__pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&__pyx_r);
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_item);
@@ -2320,122 +1989,65 @@ static std::vector<std::pair<double,double> >  __pyx_convert_vector_from_py_std_
   return __pyx_r;
 }
 
-/* "map.to_py":201
+/* "pair.to_py":158
  * 
- * @cname("__pyx_convert_map_to_py_int____double")
- * cdef object __pyx_convert_map_to_py_int____double(const map[X,Y]& s):             # <<<<<<<<<<<<<<
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
+ * @cname("__pyx_convert_pair_to_py_double____double")
+ * cdef object __pyx_convert_pair_to_py_double____double(const pair[X,Y]& p):             # <<<<<<<<<<<<<<
+ *     return p.first, p.second
+ * 
  */
 
-static PyObject *__pyx_convert_map_to_py_int____double(std::map<int,double>  const &__pyx_v_s) {
-  PyObject *__pyx_v_o = NULL;
-  std::map<int,double> ::value_type const *__pyx_v_key_value;
-  std::map<int,double> ::const_iterator __pyx_v_iter;
+static PyObject *__pyx_convert_pair_to_py_double____double(std::pair<double,double>  const &__pyx_v_p) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  int __pyx_t_2;
+  PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__pyx_convert_map_to_py_int____double", 0);
+  __Pyx_RefNannySetupContext("__pyx_convert_pair_to_py_double____double", 0);
 
-  /* "map.to_py":202
- * @cname("__pyx_convert_map_to_py_int____double")
- * cdef object __pyx_convert_map_to_py_int____double(const map[X,Y]& s):
- *     o = {}             # <<<<<<<<<<<<<<
- *     cdef const map[X,Y].value_type *key_value
- *     cdef map[X,Y].const_iterator iter = s.begin()
- */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 202, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_o = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "map.to_py":204
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
- *     cdef map[X,Y].const_iterator iter = s.begin()             # <<<<<<<<<<<<<<
- *     while iter != s.end():
- *         key_value = &cython.operator.dereference(iter)
- */
-  __pyx_v_iter = __pyx_v_s.begin();
-
-  /* "map.to_py":205
- *     cdef const map[X,Y].value_type *key_value
- *     cdef map[X,Y].const_iterator iter = s.begin()
- *     while iter != s.end():             # <<<<<<<<<<<<<<
- *         key_value = &cython.operator.dereference(iter)
- *         o[key_value.first] = key_value.second
- */
-  while (1) {
-    __pyx_t_2 = ((__pyx_v_iter != __pyx_v_s.end()) != 0);
-    if (!__pyx_t_2) break;
-
-    /* "map.to_py":206
- *     cdef map[X,Y].const_iterator iter = s.begin()
- *     while iter != s.end():
- *         key_value = &cython.operator.dereference(iter)             # <<<<<<<<<<<<<<
- *         o[key_value.first] = key_value.second
- *         cython.operator.preincrement(iter)
- */
-    __pyx_v_key_value = (&(*__pyx_v_iter));
-
-    /* "map.to_py":207
- *     while iter != s.end():
- *         key_value = &cython.operator.dereference(iter)
- *         o[key_value.first] = key_value.second             # <<<<<<<<<<<<<<
- *         cython.operator.preincrement(iter)
- *     return o
- */
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_key_value->second); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 207, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_key_value->first); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 207, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(PyDict_SetItem(__pyx_v_o, __pyx_t_3, __pyx_t_1) < 0)) __PYX_ERR(1, 207, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "map.to_py":208
- *         key_value = &cython.operator.dereference(iter)
- *         o[key_value.first] = key_value.second
- *         cython.operator.preincrement(iter)             # <<<<<<<<<<<<<<
- *     return o
- * 
- */
-    (void)((++__pyx_v_iter));
-  }
-
-  /* "map.to_py":209
- *         o[key_value.first] = key_value.second
- *         cython.operator.preincrement(iter)
- *     return o             # <<<<<<<<<<<<<<
+  /* "pair.to_py":159
+ * @cname("__pyx_convert_pair_to_py_double____double")
+ * cdef object __pyx_convert_pair_to_py_double____double(const pair[X,Y]& p):
+ *     return p.first, p.second             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_o);
-  __pyx_r = __pyx_v_o;
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_p.first); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 159, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_p.second); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 159, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 159, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_r = __pyx_t_3;
+  __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "map.to_py":201
+  /* "pair.to_py":158
  * 
- * @cname("__pyx_convert_map_to_py_int____double")
- * cdef object __pyx_convert_map_to_py_int____double(const map[X,Y]& s):             # <<<<<<<<<<<<<<
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
+ * @cname("__pyx_convert_pair_to_py_double____double")
+ * cdef object __pyx_convert_pair_to_py_double____double(const pair[X,Y]& p):             # <<<<<<<<<<<<<<
+ *     return p.first, p.second
+ * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("map.to_py.__pyx_convert_map_to_py_int____double", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pair.to_py.__pyx_convert_pair_to_py_double____double", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_o);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -2443,11 +2055,68 @@ static PyObject *__pyx_convert_map_to_py_int____double(std::map<int,double>  con
 
 /* "vector.to_py":60
  * 
- * @cname("__pyx_convert_vector_to_py_double")
- * cdef object __pyx_convert_vector_to_py_double(vector[X]& v):             # <<<<<<<<<<<<<<
+ * @cname("__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___")
+ * cdef object __pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(vector[X]& v):             # <<<<<<<<<<<<<<
  *     return [v[i] for i in range(v.size())]
  * 
  */
+
+static PyObject *__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(const std::vector<std::pair<double,double> >  &__pyx_v_v) {
+  size_t __pyx_v_i;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  size_t __pyx_t_2;
+  size_t __pyx_t_3;
+  size_t __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___", 0);
+
+  /* "vector.to_py":61
+ * @cname("__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___")
+ * cdef object __pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(vector[X]& v):
+ *     return [v[i] for i in range(v.size())]             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 61, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __pyx_v_v.size();
+  __pyx_t_3 = __pyx_t_2;
+  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
+    __pyx_v_i = __pyx_t_4;
+    __pyx_t_5 = __pyx_convert_pair_to_py_double____double((__pyx_v_v[__pyx_v_i])); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 61, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_5))) __PYX_ERR(1, 61, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "vector.to_py":60
+ * 
+ * @cname("__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___")
+ * cdef object __pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(vector[X]& v):             # <<<<<<<<<<<<<<
+ *     return [v[i] for i in range(v.size())]
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("vector.to_py.__pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
 
 static PyObject *__pyx_convert_vector_to_py_double(const std::vector<double>  &__pyx_v_v) {
   size_t __pyx_v_i;
@@ -2506,148 +2175,27 @@ static PyObject *__pyx_convert_vector_to_py_double(const std::vector<double>  &_
   return __pyx_r;
 }
 
-/* "map.to_py":201
- * 
- * @cname("__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___")
- * cdef object __pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(const map[X,Y]& s):             # <<<<<<<<<<<<<<
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
- */
-
-static PyObject *__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(std::map<int,std::vector<double> >  const &__pyx_v_s) {
-  PyObject *__pyx_v_o = NULL;
-  std::map<int,std::vector<double> > ::value_type const *__pyx_v_key_value;
-  std::map<int,std::vector<double> > ::const_iterator __pyx_v_iter;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_t_2;
-  PyObject *__pyx_t_3 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___", 0);
-
-  /* "map.to_py":202
- * @cname("__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___")
- * cdef object __pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(const map[X,Y]& s):
- *     o = {}             # <<<<<<<<<<<<<<
- *     cdef const map[X,Y].value_type *key_value
- *     cdef map[X,Y].const_iterator iter = s.begin()
- */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 202, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_o = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "map.to_py":204
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
- *     cdef map[X,Y].const_iterator iter = s.begin()             # <<<<<<<<<<<<<<
- *     while iter != s.end():
- *         key_value = &cython.operator.dereference(iter)
- */
-  __pyx_v_iter = __pyx_v_s.begin();
-
-  /* "map.to_py":205
- *     cdef const map[X,Y].value_type *key_value
- *     cdef map[X,Y].const_iterator iter = s.begin()
- *     while iter != s.end():             # <<<<<<<<<<<<<<
- *         key_value = &cython.operator.dereference(iter)
- *         o[key_value.first] = key_value.second
- */
-  while (1) {
-    __pyx_t_2 = ((__pyx_v_iter != __pyx_v_s.end()) != 0);
-    if (!__pyx_t_2) break;
-
-    /* "map.to_py":206
- *     cdef map[X,Y].const_iterator iter = s.begin()
- *     while iter != s.end():
- *         key_value = &cython.operator.dereference(iter)             # <<<<<<<<<<<<<<
- *         o[key_value.first] = key_value.second
- *         cython.operator.preincrement(iter)
- */
-    __pyx_v_key_value = (&(*__pyx_v_iter));
-
-    /* "map.to_py":207
- *     while iter != s.end():
- *         key_value = &cython.operator.dereference(iter)
- *         o[key_value.first] = key_value.second             # <<<<<<<<<<<<<<
- *         cython.operator.preincrement(iter)
- *     return o
- */
-    __pyx_t_1 = __pyx_convert_vector_to_py_double(__pyx_v_key_value->second); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 207, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_key_value->first); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 207, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(PyDict_SetItem(__pyx_v_o, __pyx_t_3, __pyx_t_1) < 0)) __PYX_ERR(1, 207, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "map.to_py":208
- *         key_value = &cython.operator.dereference(iter)
- *         o[key_value.first] = key_value.second
- *         cython.operator.preincrement(iter)             # <<<<<<<<<<<<<<
- *     return o
- * 
- */
-    (void)((++__pyx_v_iter));
-  }
-
-  /* "map.to_py":209
- *         o[key_value.first] = key_value.second
- *         cython.operator.preincrement(iter)
- *     return o             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_o);
-  __pyx_r = __pyx_v_o;
-  goto __pyx_L0;
-
-  /* "map.to_py":201
- * 
- * @cname("__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___")
- * cdef object __pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(const map[X,Y]& s):             # <<<<<<<<<<<<<<
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("map.to_py.__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_o);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
 static PyMethodDef __pyx_methods[] = {
-  {"_concordance_index", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8_metrics_1_concordance_index, METH_VARARGS|METH_KEYWORDS, 0},
-  {"_brier_score", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8_metrics_3_brier_score, METH_VARARGS|METH_KEYWORDS, 0},
-  {"_timeROC", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8_metrics_5_timeROC, METH_VARARGS|METH_KEYWORDS, 0},
+  {"_get_time_buckets", (PyCFunction)__pyx_pw_10_functions_1_get_time_buckets, METH_O, 0},
+  {"_argmin_buckets", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10_functions_3_argmin_buckets, METH_VARARGS|METH_KEYWORDS, 0},
+  {"_logrankScores", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10_functions_5_logrankScores, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec__metrics(PyObject* module); /*proto*/
+static int __pyx_pymod_exec__functions(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec__metrics},
+  {Py_mod_exec, (void*)__pyx_pymod_exec__functions},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "_metrics",
+    "_functions",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -2676,21 +2224,15 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_n_s_E, __pyx_k_E, sizeof(__pyx_k_E), 0, 0, 1, 1},
-  {&__pyx_n_s_Survival, __pyx_k_Survival, sizeof(__pyx_k_Survival), 0, 0, 1, 1},
-  {&__pyx_n_s_T, __pyx_k_T, sizeof(__pyx_k_T), 0, 0, 1, 1},
+  {&__pyx_n_s_buckets, __pyx_k_buckets, sizeof(__pyx_k_buckets), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
-  {&__pyx_n_s_include_ties, __pyx_k_include_ties, sizeof(__pyx_k_include_ties), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
-  {&__pyx_n_s_risk, __pyx_k_risk, sizeof(__pyx_k_risk), 0, 0, 1, 1},
-  {&__pyx_n_s_t, __pyx_k_t, sizeof(__pyx_k_t), 0, 0, 1, 1},
-  {&__pyx_n_s_t_max, __pyx_k_t_max, sizeof(__pyx_k_t_max), 0, 0, 1, 1},
+  {&__pyx_n_s_status, __pyx_k_status, sizeof(__pyx_k_status), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_time_buckets, __pyx_k_time_buckets, sizeof(__pyx_k_time_buckets), 0, 0, 1, 1},
-  {&__pyx_n_s_times, __pyx_k_times, sizeof(__pyx_k_times), 0, 0, 1, 1},
-  {&__pyx_n_s_use_mean_point, __pyx_k_use_mean_point, sizeof(__pyx_k_use_mean_point), 0, 0, 1, 1},
+  {&__pyx_n_s_time, __pyx_k_time, sizeof(__pyx_k_time), 0, 0, 1, 1},
+  {&__pyx_n_s_x, __pyx_k_x, sizeof(__pyx_k_x), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
@@ -2797,11 +2339,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC init_metrics(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC init_metrics(void)
+__Pyx_PyMODINIT_FUNC init_functions(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC init_functions(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit__metrics(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit__metrics(void)
+__Pyx_PyMODINIT_FUNC PyInit__functions(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit__functions(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -2868,7 +2410,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec__metrics(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec__functions(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -2880,7 +2422,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec__metrics(PyObject *__pyx_pyinit_mo
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module '_metrics' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module '_functions' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -2895,7 +2437,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit__metrics(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit__functions(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -2932,7 +2474,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("_metrics", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("_functions", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -2950,14 +2492,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main__metrics) {
+  if (__pyx_module_is_main__functions) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "_metrics")) {
-      if (unlikely(PyDict_SetItemString(modules, "_metrics", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "_functions")) {
+      if (unlikely(PyDict_SetItemString(modules, "_functions", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2978,7 +2520,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "_metrics.pyx":1
+  /* "_functions.pyx":1
  * #%%cython --a             # <<<<<<<<<<<<<<
  * # distutils: language = c++
  * 
@@ -2988,12 +2530,12 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "map.to_py":201
+  /* "vector.to_py":60
  * 
- * @cname("__pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___")
- * cdef object __pyx_convert_map_to_py_int____std_3a__3a_vector_3c_double_3e___(const map[X,Y]& s):             # <<<<<<<<<<<<<<
- *     o = {}
- *     cdef const map[X,Y].value_type *key_value
+ * @cname("__pyx_convert_vector_to_py_double")
+ * cdef object __pyx_convert_vector_to_py_double(vector[X]& v):             # <<<<<<<<<<<<<<
+ *     return [v[i] for i in range(v.size())]
+ * 
  */
 
   /*--- Wrapped vars code ---*/
@@ -3003,11 +2545,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init _metrics", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init _functions", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init _metrics");
+    PyErr_SetString(PyExc_ImportError, "init _functions");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

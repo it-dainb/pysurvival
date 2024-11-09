@@ -355,33 +355,19 @@
   #endif
 #endif
 
-#ifndef __cplusplus
-  #error "Cython files generated with the C++ option must be compiled with a C++ compiler."
-#endif
 #ifndef CYTHON_INLINE
   #if defined(__clang__)
     #define CYTHON_INLINE __inline__ __attribute__ ((__unused__))
-  #else
+  #elif defined(__GNUC__)
+    #define CYTHON_INLINE __inline__
+  #elif defined(_MSC_VER)
+    #define CYTHON_INLINE __inline
+  #elif defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
     #define CYTHON_INLINE inline
+  #else
+    #define CYTHON_INLINE
   #endif
 #endif
-template<typename T>
-void __Pyx_call_destructor(T& x) {
-    x.~T();
-}
-template<typename T>
-class __Pyx_FakeReference {
-  public:
-    __Pyx_FakeReference() : ptr(NULL) { }
-    __Pyx_FakeReference(const T& ref) : ptr(const_cast<T*>(&ref)) { }
-    T *operator->() { return ptr; }
-    T *operator&() { return ptr; }
-    operator T&() { return *ptr; }
-    template<typename U> bool operator ==(U other) { return *ptr == other; }
-    template<typename U> bool operator !=(U other) { return *ptr != other; }
-  private:
-    T *ptr;
-};
 
 #define __PYX_BUILD_PY_SSIZE_T "n"
 #define CYTHON_FORMAT_SSIZE_T "z"
