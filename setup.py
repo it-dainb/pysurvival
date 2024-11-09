@@ -56,7 +56,7 @@ def read_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 # Extensions Compilation arguments #
-extra_compile_args = ['-std=c++11', "-O3"] 
+extra_compile_args = ['-std=c++11', '-O3', '-stdlib=libc++']
 
 # Extensions info #
 ext_modules = [ 
