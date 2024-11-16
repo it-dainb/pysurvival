@@ -295,11 +295,17 @@ private:
          double sample_fraction_value, int importance_mode_r, int splitrule_r, 
          int prediction_type_r, bool verbose, int seed, int num_threads, bool save_memory);
 
-      std::vector<std::vector<double> > predict_survival( std::vector <std::vector<double> > input_data, int num_threads);
+      std::vector<std::vector<double> > predict_survival( std::vector <std::vector<double> > input_data, 
+        int num_threads, bool verbose, int seed, bool save_memory
+      );
 
-      std::vector<std::vector<double> > predict_hazard( std::vector <std::vector<double> > input_data, int num_threads);
+      std::vector<std::vector<double> > predict_hazard( std::vector <std::vector<double> > input_data, 
+        int num_threads, bool verbose, int seed, bool save_memory
+      );
 
-      std::vector<double> predict_risk( std::vector <std::vector<double> > input_data, int num_threads);
+      std::vector<double> predict_risk( std::vector <std::vector<double> > input_data,
+        int num_threads, bool verbose, int seed, bool save_memory
+      );
 
     };
 

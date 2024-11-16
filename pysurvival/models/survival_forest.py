@@ -102,7 +102,7 @@ class BaseSurvivalForest(BaseModel):
             min_node_size = 10, num_threads = -1, weights = None, 
             sample_size_pct = 0.63, alpha = 0.5, minprop=0.1,
             num_random_splits = 100, importance_mode = 'impurity_corrected', 
-            seed = None, save_memory=False ):
+            seed = None, save_memory=False, verbose = False):
         """
         Arguments:
         ---------
@@ -370,7 +370,6 @@ class BaseSurvivalForest(BaseModel):
                 raise Exception("weights length needs to be {} ".format(N))
 
         # Fitting the model using the C++ object
-        verbose = True
         self.model.fit( input_data, all_data_features, case_weights,
                 num_trees, num_variables_to_use, min_node_size, max_depth,
                 alpha, minprop, num_random_splits, sample_size_pct, 
@@ -401,7 +400,7 @@ class BaseSurvivalForest(BaseModel):
         return self
 
 
-    def predict(self, X, t = None, num_threads=-1):
+    def predict(self, X, t = None, num_threads = -1, verbose = False, seed = 1, save_memory = False):
 
         # Checking if the data has the right format
         X = utils.check_data(X)
@@ -415,10 +414,10 @@ class BaseSurvivalForest(BaseModel):
         self.load_properties()
 
         # Computing Survival
-        survival = np.array(self.model.predict_survival(input_data,num_threads))     
+        survival = np.array(self.model.predict_survival(input_data, num_threads, verbose, seed, save_memory))     
 
         # Computing hazard
-        hazard = np.array(self.model.predict_hazard(input_data, num_threads))  
+        hazard = np.array(self.model.predict_hazard(input_data, num_threads, verbose, seed, save_memory))  
 
         # Computing density
         density  = hazard*survival
@@ -431,7 +430,7 @@ class BaseSurvivalForest(BaseModel):
             return hazard[:, index], density[:, index], survival[:, index]
 
 
-    def predict_risk(self, X, num_threads=-1):
+    def predict_risk(self, X, num_threads = -1, verbose = False, seed = 1, save_memory = False):
 
         # Checking if the data has the right format
         X = utils.check_data(X)
@@ -445,7 +444,7 @@ class BaseSurvivalForest(BaseModel):
         self.load_properties()
 
         # Computing risk
-        risk = self.model.predict_risk(input_data, num_threads)
+        risk = self.model.predict_risk(input_data, num_threads, verbose, seed, save_memory)
         return np.array(risk)
 
 

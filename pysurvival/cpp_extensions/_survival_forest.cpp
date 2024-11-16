@@ -1004,43 +1004,52 @@ struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_survival
 struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_hazard;
 struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_risk;
 
-/* "_survival_forest.pyx":229
+/* "_survival_forest.pyx":235
  * 
  *     # ---------------------------- Predicting ------------------------------ #
  *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the hazard functions """
  */
 struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_survival {
   int __pyx_n;
   int num_threads;
+  bool verbose;
+  int seed;
+  bool save_memory;
 };
 
-/* "_survival_forest.pyx":236
+/* "_survival_forest.pyx":242
  * 
  * 
  *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the hazard functions """
  */
 struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_hazard {
   int __pyx_n;
   int num_threads;
+  bool verbose;
+  int seed;
+  bool save_memory;
 };
 
-/* "_survival_forest.pyx":243
+/* "_survival_forest.pyx":249
  * 
  * 
  *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the risk values """
  */
 struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_risk {
   int __pyx_n;
   int num_threads;
+  bool verbose;
+  int seed;
+  bool save_memory;
 };
 
-/* "_survival_forest.pyx":57
+/* "_survival_forest.pyx":63
  * 
  * 
  * cdef class _SurvivalForestModel :             # <<<<<<<<<<<<<<
@@ -1589,9 +1598,9 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_3chf_2__set__(stru
 static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_names___get__(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self); /* proto */
 static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_names_2__set__(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, PyObject *__pyx_v_variable_names); /* proto */
 static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_4fit(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, std::vector<std::string>  __pyx_v_all_data_features, std::vector<double>  __pyx_v_case_weights, uint32_t __pyx_v_num_trees, uint32_t __pyx_v_mtry, uint32_t __pyx_v_min_node_size, uint32_t __pyx_v_max_depth, double __pyx_v_alpha, double __pyx_v_minprop, uint32_t __pyx_v_num_random_splits, double __pyx_v_sample_fraction_value, int __pyx_v_importance_mode_r, int __pyx_v_splitrule_r, bool __pyx_v_verbose, int __pyx_v_seed, int __pyx_v_num_threads, bool __pyx_v_save_memory); /* proto */
-static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_survival(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads); /* proto */
-static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_hazard(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads); /* proto */
-static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_risk(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads); /* proto */
+static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_survival(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads, bool __pyx_v_verbose, int __pyx_v_seed, bool __pyx_v_save_memory); /* proto */
+static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_hazard(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads, bool __pyx_v_verbose, int __pyx_v_seed, bool __pyx_v_save_memory); /* proto */
+static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_risk(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads, bool __pyx_v_verbose, int __pyx_v_seed, bool __pyx_v_save_memory); /* proto */
 static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_tp_new_16_survival_forest__SurvivalForestModel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -1599,7 +1608,7 @@ static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 /* Late includes */
 
-/* "_survival_forest.pyx":62
+/* "_survival_forest.pyx":68
  *         SurvivalForestModel *thisptr # hold a C++ instance which we're wrapping
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -1632,7 +1641,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel___init__(struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "_survival_forest.pyx":63
+  /* "_survival_forest.pyx":69
  * 
  *     def __init__(self):
  *         self.thisptr = new SurvivalForestModel()             # <<<<<<<<<<<<<<
@@ -1643,11 +1652,11 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel___init__(struct __
     __pyx_t_1 = new ranger::SurvivalForestModel();
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(1, 63, __pyx_L1_error)
+    __PYX_ERR(1, 69, __pyx_L1_error)
   }
   __pyx_v_self->thisptr = __pyx_t_1;
 
-  /* "_survival_forest.pyx":62
+  /* "_survival_forest.pyx":68
  *         SurvivalForestModel *thisptr # hold a C++ instance which we're wrapping
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -1666,7 +1675,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel___init__(struct __
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":65
+/* "_survival_forest.pyx":71
  *         self.thisptr = new SurvivalForestModel()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1689,7 +1698,7 @@ static void __pyx_pf_16_survival_forest_20_SurvivalForestModel_2__dealloc__(stru
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "_survival_forest.pyx":66
+  /* "_survival_forest.pyx":72
  * 
  *     def __dealloc__(self):
  *         del self.thisptr             # <<<<<<<<<<<<<<
@@ -1698,7 +1707,7 @@ static void __pyx_pf_16_survival_forest_20_SurvivalForestModel_2__dealloc__(stru
  */
   delete __pyx_v_self->thisptr;
 
-  /* "_survival_forest.pyx":65
+  /* "_survival_forest.pyx":71
  *         self.thisptr = new SurvivalForestModel()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1710,7 +1719,7 @@ static void __pyx_pf_16_survival_forest_20_SurvivalForestModel_2__dealloc__(stru
   __Pyx_RefNannyFinishContext();
 }
 
-/* "_survival_forest.pyx":70
+/* "_survival_forest.pyx":76
  *     # Times
  *     @property
  *     def unique_timepoints(self):             # <<<<<<<<<<<<<<
@@ -1740,7 +1749,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_17unique_tim
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":71
+  /* "_survival_forest.pyx":77
  *     @property
  *     def unique_timepoints(self):
  *         return self.thisptr.unique_timepoints             # <<<<<<<<<<<<<<
@@ -1748,13 +1757,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_17unique_tim
  *     @unique_timepoints.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_double(__pyx_v_self->thisptr->unique_timepoints); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 71, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_double(__pyx_v_self->thisptr->unique_timepoints); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":70
+  /* "_survival_forest.pyx":76
  *     # Times
  *     @property
  *     def unique_timepoints(self):             # <<<<<<<<<<<<<<
@@ -1773,7 +1782,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_17unique_tim
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":74
+/* "_survival_forest.pyx":80
  * 
  *     @unique_timepoints.setter
  *     def unique_timepoints(self, unique_timepoints):             # <<<<<<<<<<<<<<
@@ -1803,17 +1812,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_17unique_timepoint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":75
+  /* "_survival_forest.pyx":81
  *     @unique_timepoints.setter
  *     def unique_timepoints(self, unique_timepoints):
  *         self.thisptr.unique_timepoints = unique_timepoints             # <<<<<<<<<<<<<<
  * 
  *     # num_trees
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_unique_timepoints); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 75, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_unique_timepoints); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 81, __pyx_L1_error)
   __pyx_v_self->thisptr->unique_timepoints = __pyx_t_1;
 
-  /* "_survival_forest.pyx":74
+  /* "_survival_forest.pyx":80
  * 
  *     @unique_timepoints.setter
  *     def unique_timepoints(self, unique_timepoints):             # <<<<<<<<<<<<<<
@@ -1832,7 +1841,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_17unique_timepoint
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":79
+/* "_survival_forest.pyx":85
  *     # num_trees
  *     @property
  *     def num_trees(self):             # <<<<<<<<<<<<<<
@@ -1862,7 +1871,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_9num_trees__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":80
+  /* "_survival_forest.pyx":86
  *     @property
  *     def num_trees(self):
  *         return self.thisptr.num_trees             # <<<<<<<<<<<<<<
@@ -1870,13 +1879,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_9num_trees__
  *     @num_trees.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->num_trees); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 80, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->num_trees); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":79
+  /* "_survival_forest.pyx":85
  *     # num_trees
  *     @property
  *     def num_trees(self):             # <<<<<<<<<<<<<<
@@ -1895,7 +1904,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_9num_trees__
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":83
+/* "_survival_forest.pyx":89
  * 
  *     @num_trees.setter
  *     def num_trees(self, num_trees):             # <<<<<<<<<<<<<<
@@ -1925,17 +1934,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_9num_trees_2__set_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":84
+  /* "_survival_forest.pyx":90
  *     @num_trees.setter
  *     def num_trees(self, num_trees):
  *         self.thisptr.num_trees = num_trees             # <<<<<<<<<<<<<<
  * 
  *     # variable_importance
  */
-  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_num_trees); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 84, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_num_trees); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 90, __pyx_L1_error)
   __pyx_v_self->thisptr->num_trees = __pyx_t_1;
 
-  /* "_survival_forest.pyx":83
+  /* "_survival_forest.pyx":89
  * 
  *     @num_trees.setter
  *     def num_trees(self, num_trees):             # <<<<<<<<<<<<<<
@@ -1954,7 +1963,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_9num_trees_2__set_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":88
+/* "_survival_forest.pyx":94
  *     # variable_importance
  *     @property
  *     def variable_importance(self):             # <<<<<<<<<<<<<<
@@ -1984,7 +1993,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_19variable_i
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":89
+  /* "_survival_forest.pyx":95
  *     @property
  *     def variable_importance(self):
  *         return self.thisptr.variable_importance             # <<<<<<<<<<<<<<
@@ -1992,13 +2001,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_19variable_i
  *     @variable_importance.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_double(__pyx_v_self->thisptr->variable_importance); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 89, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_double(__pyx_v_self->thisptr->variable_importance); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":88
+  /* "_survival_forest.pyx":94
  *     # variable_importance
  *     @property
  *     def variable_importance(self):             # <<<<<<<<<<<<<<
@@ -2017,7 +2026,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_19variable_i
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":92
+/* "_survival_forest.pyx":98
  * 
  *     @variable_importance.setter
  *     def variable_importance(self, variable_importance):             # <<<<<<<<<<<<<<
@@ -2047,17 +2056,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_19variable_importa
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":93
+  /* "_survival_forest.pyx":99
  *     @variable_importance.setter
  *     def variable_importance(self, variable_importance):
  *         self.thisptr.variable_importance = variable_importance             # <<<<<<<<<<<<<<
  * 
  *     # num_independent_variables
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_variable_importance); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 93, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_variable_importance); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 99, __pyx_L1_error)
   __pyx_v_self->thisptr->variable_importance = __pyx_t_1;
 
-  /* "_survival_forest.pyx":92
+  /* "_survival_forest.pyx":98
  * 
  *     @variable_importance.setter
  *     def variable_importance(self, variable_importance):             # <<<<<<<<<<<<<<
@@ -2076,7 +2085,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_19variable_importa
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":97
+/* "_survival_forest.pyx":103
  *     # num_independent_variables
  *     @property
  *     def num_independent_variables(self):             # <<<<<<<<<<<<<<
@@ -2106,7 +2115,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_25num_indepe
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":98
+  /* "_survival_forest.pyx":104
  *     @property
  *     def num_independent_variables(self):
  *         return self.thisptr.num_independent_variables             # <<<<<<<<<<<<<<
@@ -2114,13 +2123,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_25num_indepe
  *     @num_independent_variables.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->num_independent_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->num_independent_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":97
+  /* "_survival_forest.pyx":103
  *     # num_independent_variables
  *     @property
  *     def num_independent_variables(self):             # <<<<<<<<<<<<<<
@@ -2139,7 +2148,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_25num_indepe
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":101
+/* "_survival_forest.pyx":107
  * 
  *     @num_independent_variables.setter
  *     def num_independent_variables(self, num_independent_variables):             # <<<<<<<<<<<<<<
@@ -2169,17 +2178,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_25num_independent_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":102
+  /* "_survival_forest.pyx":108
  *     @num_independent_variables.setter
  *     def num_independent_variables(self, num_independent_variables):
  *         self.thisptr.num_independent_variables = num_independent_variables             # <<<<<<<<<<<<<<
  * 
  *     # mtry
  */
-  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_num_independent_variables); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 102, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_num_independent_variables); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 108, __pyx_L1_error)
   __pyx_v_self->thisptr->num_independent_variables = __pyx_t_1;
 
-  /* "_survival_forest.pyx":101
+  /* "_survival_forest.pyx":107
  * 
  *     @num_independent_variables.setter
  *     def num_independent_variables(self, num_independent_variables):             # <<<<<<<<<<<<<<
@@ -2198,7 +2207,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_25num_independent_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":106
+/* "_survival_forest.pyx":112
  *     # mtry
  *     @property
  *     def mtry(self):             # <<<<<<<<<<<<<<
@@ -2228,7 +2237,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_4mtry___get_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":107
+  /* "_survival_forest.pyx":113
  *     @property
  *     def mtry(self):
  *         return self.thisptr.mtry             # <<<<<<<<<<<<<<
@@ -2236,13 +2245,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_4mtry___get_
  *     @mtry.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_uint32_t(__pyx_v_self->thisptr->mtry); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 107, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_uint32_t(__pyx_v_self->thisptr->mtry); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":106
+  /* "_survival_forest.pyx":112
  *     # mtry
  *     @property
  *     def mtry(self):             # <<<<<<<<<<<<<<
@@ -2261,7 +2270,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_4mtry___get_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":110
+/* "_survival_forest.pyx":116
  * 
  *     @mtry.setter
  *     def mtry(self, mtry):             # <<<<<<<<<<<<<<
@@ -2291,17 +2300,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_4mtry_2__set__(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":111
+  /* "_survival_forest.pyx":117
  *     @mtry.setter
  *     def mtry(self, mtry):
  *         self.thisptr.mtry = mtry             # <<<<<<<<<<<<<<
  * 
  *     # min_node_size
  */
-  __pyx_t_1 = __Pyx_PyInt_As_uint32_t(__pyx_v_mtry); if (unlikely((__pyx_t_1 == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 111, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_uint32_t(__pyx_v_mtry); if (unlikely((__pyx_t_1 == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 117, __pyx_L1_error)
   __pyx_v_self->thisptr->mtry = __pyx_t_1;
 
-  /* "_survival_forest.pyx":110
+  /* "_survival_forest.pyx":116
  * 
  *     @mtry.setter
  *     def mtry(self, mtry):             # <<<<<<<<<<<<<<
@@ -2320,7 +2329,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_4mtry_2__set__(str
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":115
+/* "_survival_forest.pyx":121
  *     # min_node_size
  *     @property
  *     def min_node_size(self):             # <<<<<<<<<<<<<<
@@ -2350,7 +2359,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_13min_node_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":116
+  /* "_survival_forest.pyx":122
  *     @property
  *     def min_node_size(self):
  *         return self.thisptr.min_node_size             # <<<<<<<<<<<<<<
@@ -2358,13 +2367,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_13min_node_s
  *     @min_node_size.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_uint32_t(__pyx_v_self->thisptr->min_node_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 116, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_uint32_t(__pyx_v_self->thisptr->min_node_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":115
+  /* "_survival_forest.pyx":121
  *     # min_node_size
  *     @property
  *     def min_node_size(self):             # <<<<<<<<<<<<<<
@@ -2383,7 +2392,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_13min_node_s
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":119
+/* "_survival_forest.pyx":125
  * 
  *     @min_node_size.setter
  *     def min_node_size(self, min_node_size):             # <<<<<<<<<<<<<<
@@ -2413,17 +2422,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_13min_node_size_2_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":120
+  /* "_survival_forest.pyx":126
  *     @min_node_size.setter
  *     def min_node_size(self, min_node_size):
  *         self.thisptr.min_node_size = min_node_size             # <<<<<<<<<<<<<<
  * 
  *     # overall_prediction_error
  */
-  __pyx_t_1 = __Pyx_PyInt_As_uint32_t(__pyx_v_min_node_size); if (unlikely((__pyx_t_1 == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 120, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_uint32_t(__pyx_v_min_node_size); if (unlikely((__pyx_t_1 == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 126, __pyx_L1_error)
   __pyx_v_self->thisptr->min_node_size = __pyx_t_1;
 
-  /* "_survival_forest.pyx":119
+  /* "_survival_forest.pyx":125
  * 
  *     @min_node_size.setter
  *     def min_node_size(self, min_node_size):             # <<<<<<<<<<<<<<
@@ -2442,7 +2451,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_13min_node_size_2_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":124
+/* "_survival_forest.pyx":130
  *     # overall_prediction_error
  *     @property
  *     def overall_prediction_error(self):             # <<<<<<<<<<<<<<
@@ -2472,7 +2481,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_24overall_pr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":125
+  /* "_survival_forest.pyx":131
  *     @property
  *     def overall_prediction_error(self):
  *         return self.thisptr.overall_prediction_error             # <<<<<<<<<<<<<<
@@ -2480,13 +2489,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_24overall_pr
  *     @overall_prediction_error.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->overall_prediction_error); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 125, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->overall_prediction_error); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":124
+  /* "_survival_forest.pyx":130
  *     # overall_prediction_error
  *     @property
  *     def overall_prediction_error(self):             # <<<<<<<<<<<<<<
@@ -2505,7 +2514,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_24overall_pr
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":128
+/* "_survival_forest.pyx":134
  * 
  *     @overall_prediction_error.setter
  *     def overall_prediction_error(self, overall_prediction_error):             # <<<<<<<<<<<<<<
@@ -2535,17 +2544,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_24overall_predicti
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":129
+  /* "_survival_forest.pyx":135
  *     @overall_prediction_error.setter
  *     def overall_prediction_error(self, overall_prediction_error):
  *         self.thisptr.overall_prediction_error = overall_prediction_error             # <<<<<<<<<<<<<<
  * 
  *     # dependent_varID
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_overall_prediction_error); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 129, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_overall_prediction_error); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 135, __pyx_L1_error)
   __pyx_v_self->thisptr->overall_prediction_error = __pyx_t_1;
 
-  /* "_survival_forest.pyx":128
+  /* "_survival_forest.pyx":134
  * 
  *     @overall_prediction_error.setter
  *     def overall_prediction_error(self, overall_prediction_error):             # <<<<<<<<<<<<<<
@@ -2564,7 +2573,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_24overall_predicti
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":133
+/* "_survival_forest.pyx":139
  *     # dependent_varID
  *     @property
  *     def dependent_varID(self):             # <<<<<<<<<<<<<<
@@ -2594,7 +2603,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_15dependent_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":134
+  /* "_survival_forest.pyx":140
  *     @property
  *     def dependent_varID(self):
  *         return self.thisptr.dependent_varID             # <<<<<<<<<<<<<<
@@ -2602,13 +2611,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_15dependent_
  *     @dependent_varID.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->dependent_varID); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 134, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->dependent_varID); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":133
+  /* "_survival_forest.pyx":139
  *     # dependent_varID
  *     @property
  *     def dependent_varID(self):             # <<<<<<<<<<<<<<
@@ -2627,7 +2636,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_15dependent_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":137
+/* "_survival_forest.pyx":143
  * 
  *     @dependent_varID.setter
  *     def dependent_varID(self, dependent_varID):             # <<<<<<<<<<<<<<
@@ -2657,17 +2666,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_15dependent_varID_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":138
+  /* "_survival_forest.pyx":144
  *     @dependent_varID.setter
  *     def dependent_varID(self, dependent_varID):
  *         self.thisptr.dependent_varID = dependent_varID             # <<<<<<<<<<<<<<
  * 
  *     # status_varID
  */
-  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_dependent_varID); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 138, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_dependent_varID); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 144, __pyx_L1_error)
   __pyx_v_self->thisptr->dependent_varID = __pyx_t_1;
 
-  /* "_survival_forest.pyx":137
+  /* "_survival_forest.pyx":143
  * 
  *     @dependent_varID.setter
  *     def dependent_varID(self, dependent_varID):             # <<<<<<<<<<<<<<
@@ -2686,7 +2695,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_15dependent_varID_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":142
+/* "_survival_forest.pyx":148
  *     # status_varID
  *     @property
  *     def status_varID(self):             # <<<<<<<<<<<<<<
@@ -2716,7 +2725,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12status_var
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":143
+  /* "_survival_forest.pyx":149
  *     @property
  *     def status_varID(self):
  *         return self.thisptr.status_varID             # <<<<<<<<<<<<<<
@@ -2724,13 +2733,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12status_var
  *     @status_varID.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->status_varID); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 143, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_self->thisptr->status_varID); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":142
+  /* "_survival_forest.pyx":148
  *     # status_varID
  *     @property
  *     def status_varID(self):             # <<<<<<<<<<<<<<
@@ -2749,7 +2758,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12status_var
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":146
+/* "_survival_forest.pyx":152
  * 
  *     @status_varID.setter
  *     def status_varID(self, status_varID):             # <<<<<<<<<<<<<<
@@ -2779,17 +2788,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_12status_varID_2__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":147
+  /* "_survival_forest.pyx":153
  *     @status_varID.setter
  *     def status_varID(self, status_varID):
  *         self.thisptr.status_varID = status_varID             # <<<<<<<<<<<<<<
  * 
  *     # child_nodeIDs
  */
-  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_status_varID); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 147, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_size_t(__pyx_v_status_varID); if (unlikely((__pyx_t_1 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 153, __pyx_L1_error)
   __pyx_v_self->thisptr->status_varID = __pyx_t_1;
 
-  /* "_survival_forest.pyx":146
+  /* "_survival_forest.pyx":152
  * 
  *     @status_varID.setter
  *     def status_varID(self, status_varID):             # <<<<<<<<<<<<<<
@@ -2808,7 +2817,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_12status_varID_2__
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":151
+/* "_survival_forest.pyx":157
  *     # child_nodeIDs
  *     @property
  *     def child_nodeIDs(self):             # <<<<<<<<<<<<<<
@@ -2838,7 +2847,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_13child_node
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":152
+  /* "_survival_forest.pyx":158
  *     @property
  *     def child_nodeIDs(self):
  *         return self.thisptr.child_nodeIDs             # <<<<<<<<<<<<<<
@@ -2846,13 +2855,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_13child_node
  *     @child_nodeIDs.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_size_t_3e____3e___(__pyx_v_self->thisptr->child_nodeIDs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 152, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_size_t_3e____3e___(__pyx_v_self->thisptr->child_nodeIDs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":151
+  /* "_survival_forest.pyx":157
  *     # child_nodeIDs
  *     @property
  *     def child_nodeIDs(self):             # <<<<<<<<<<<<<<
@@ -2871,7 +2880,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_13child_node
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":155
+/* "_survival_forest.pyx":161
  * 
  *     @child_nodeIDs.setter
  *     def child_nodeIDs(self, child_nodeIDs):             # <<<<<<<<<<<<<<
@@ -2901,17 +2910,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_13child_nodeIDs_2_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":156
+  /* "_survival_forest.pyx":162
  *     @child_nodeIDs.setter
  *     def child_nodeIDs(self, child_nodeIDs):
  *         self.thisptr.child_nodeIDs = child_nodeIDs             # <<<<<<<<<<<<<<
  * 
  *     # split_varIDs
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_size_t_3e____3e___(__pyx_v_child_nodeIDs); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 156, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_size_t_3e____3e___(__pyx_v_child_nodeIDs); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 162, __pyx_L1_error)
   __pyx_v_self->thisptr->child_nodeIDs = __pyx_t_1;
 
-  /* "_survival_forest.pyx":155
+  /* "_survival_forest.pyx":161
  * 
  *     @child_nodeIDs.setter
  *     def child_nodeIDs(self, child_nodeIDs):             # <<<<<<<<<<<<<<
@@ -2930,7 +2939,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_13child_nodeIDs_2_
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":160
+/* "_survival_forest.pyx":166
  *     # split_varIDs
  *     @property
  *     def split_varIDs(self):             # <<<<<<<<<<<<<<
@@ -2960,7 +2969,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_varI
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":161
+  /* "_survival_forest.pyx":167
  *     @property
  *     def split_varIDs(self):
  *         return self.thisptr.split_varIDs             # <<<<<<<<<<<<<<
@@ -2968,13 +2977,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_varI
  *     @split_varIDs.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_size_t_3e___(__pyx_v_self->thisptr->split_varIDs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 161, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_size_t_3e___(__pyx_v_self->thisptr->split_varIDs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":160
+  /* "_survival_forest.pyx":166
  *     # split_varIDs
  *     @property
  *     def split_varIDs(self):             # <<<<<<<<<<<<<<
@@ -2993,7 +3002,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_varI
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":164
+/* "_survival_forest.pyx":170
  * 
  *     @split_varIDs.setter
  *     def split_varIDs(self, split_varIDs):             # <<<<<<<<<<<<<<
@@ -3023,17 +3032,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_varIDs_2__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":165
+  /* "_survival_forest.pyx":171
  *     @split_varIDs.setter
  *     def split_varIDs(self, split_varIDs):
  *         self.thisptr.split_varIDs = split_varIDs             # <<<<<<<<<<<<<<
  * 
  *     # split_values
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_size_t_3e___(__pyx_v_split_varIDs); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 165, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_size_t_3e___(__pyx_v_split_varIDs); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 171, __pyx_L1_error)
   __pyx_v_self->thisptr->split_varIDs = __pyx_t_1;
 
-  /* "_survival_forest.pyx":164
+  /* "_survival_forest.pyx":170
  * 
  *     @split_varIDs.setter
  *     def split_varIDs(self, split_varIDs):             # <<<<<<<<<<<<<<
@@ -3052,7 +3061,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_varIDs_2__
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":169
+/* "_survival_forest.pyx":175
  *     # split_values
  *     @property
  *     def split_values(self):             # <<<<<<<<<<<<<<
@@ -3082,7 +3091,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_valu
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":170
+  /* "_survival_forest.pyx":176
  *     @property
  *     def split_values(self):
  *         return self.thisptr.split_values             # <<<<<<<<<<<<<<
@@ -3090,13 +3099,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_valu
  *     @split_values.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_self->thisptr->split_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 170, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_self->thisptr->split_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 176, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":169
+  /* "_survival_forest.pyx":175
  *     # split_values
  *     @property
  *     def split_values(self):             # <<<<<<<<<<<<<<
@@ -3115,7 +3124,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_valu
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":173
+/* "_survival_forest.pyx":179
  * 
  *     @split_values.setter
  *     def split_values(self, split_values):             # <<<<<<<<<<<<<<
@@ -3145,17 +3154,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_values_2__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":174
+  /* "_survival_forest.pyx":180
  *     @split_values.setter
  *     def split_values(self, split_values):
  *         self.thisptr.split_values = split_values             # <<<<<<<<<<<<<<
  * 
  *     # is_ordered
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_split_values); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 174, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_split_values); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 180, __pyx_L1_error)
   __pyx_v_self->thisptr->split_values = __pyx_t_1;
 
-  /* "_survival_forest.pyx":173
+  /* "_survival_forest.pyx":179
  * 
  *     @split_values.setter
  *     def split_values(self, split_values):             # <<<<<<<<<<<<<<
@@ -3174,7 +3183,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_12split_values_2__
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":178
+/* "_survival_forest.pyx":184
  *     # is_ordered
  *     @property
  *     def is_ordered(self):             # <<<<<<<<<<<<<<
@@ -3204,7 +3213,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10is_ordered
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":179
+  /* "_survival_forest.pyx":185
  *     @property
  *     def is_ordered(self):
  *         return self.thisptr.is_ordered             # <<<<<<<<<<<<<<
@@ -3212,13 +3221,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10is_ordered
  *     @is_ordered.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_bool(__pyx_v_self->thisptr->is_ordered); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 179, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_bool(__pyx_v_self->thisptr->is_ordered); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 185, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":178
+  /* "_survival_forest.pyx":184
  *     # is_ordered
  *     @property
  *     def is_ordered(self):             # <<<<<<<<<<<<<<
@@ -3237,7 +3246,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10is_ordered
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":182
+/* "_survival_forest.pyx":188
  * 
  *     @is_ordered.setter
  *     def is_ordered(self, is_ordered):             # <<<<<<<<<<<<<<
@@ -3267,17 +3276,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_10is_ordered_2__se
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":183
+  /* "_survival_forest.pyx":189
  *     @is_ordered.setter
  *     def is_ordered(self, is_ordered):
  *         self.thisptr.is_ordered = is_ordered             # <<<<<<<<<<<<<<
  * 
  *     # chf
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_bool(__pyx_v_is_ordered); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 183, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_bool(__pyx_v_is_ordered); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 189, __pyx_L1_error)
   __pyx_v_self->thisptr->is_ordered = __pyx_t_1;
 
-  /* "_survival_forest.pyx":182
+  /* "_survival_forest.pyx":188
  * 
  *     @is_ordered.setter
  *     def is_ordered(self, is_ordered):             # <<<<<<<<<<<<<<
@@ -3296,7 +3305,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_10is_ordered_2__se
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":187
+/* "_survival_forest.pyx":193
  *     # chf
  *     @property
  *     def chf(self):             # <<<<<<<<<<<<<<
@@ -3326,7 +3335,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_3chf___get__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":188
+  /* "_survival_forest.pyx":194
  *     @property
  *     def chf(self):
  *         return self.thisptr.chf             # <<<<<<<<<<<<<<
@@ -3334,13 +3343,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_3chf___get__
  *     @chf.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_double_3e____3e___(__pyx_v_self->thisptr->chf); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 188, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_double_3e____3e___(__pyx_v_self->thisptr->chf); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 194, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":187
+  /* "_survival_forest.pyx":193
  *     # chf
  *     @property
  *     def chf(self):             # <<<<<<<<<<<<<<
@@ -3359,7 +3368,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_3chf___get__
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":191
+/* "_survival_forest.pyx":197
  * 
  *     @chf.setter
  *     def chf(self, chf):             # <<<<<<<<<<<<<<
@@ -3389,17 +3398,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_3chf_2__set__(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":192
+  /* "_survival_forest.pyx":198
  *     @chf.setter
  *     def chf(self, chf):
  *         self.thisptr.chf = chf             # <<<<<<<<<<<<<<
  * 
  *     # variable_names
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_double_3e____3e___(__pyx_v_chf); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 192, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_std_3a__3a_vector_3c_double_3e____3e___(__pyx_v_chf); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 198, __pyx_L1_error)
   __pyx_v_self->thisptr->chf = __pyx_t_1;
 
-  /* "_survival_forest.pyx":191
+  /* "_survival_forest.pyx":197
  * 
  *     @chf.setter
  *     def chf(self, chf):             # <<<<<<<<<<<<<<
@@ -3418,7 +3427,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_3chf_2__set__(stru
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":196
+/* "_survival_forest.pyx":202
  *     # variable_names
  *     @property
  *     def variable_names(self):             # <<<<<<<<<<<<<<
@@ -3448,7 +3457,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_n
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "_survival_forest.pyx":197
+  /* "_survival_forest.pyx":203
  *     @property
  *     def variable_names(self):
  *         return self.thisptr.variable_names             # <<<<<<<<<<<<<<
@@ -3456,13 +3465,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_n
  *     @variable_names.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_string(__pyx_v_self->thisptr->variable_names); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 197, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_std_3a__3a_string(__pyx_v_self->thisptr->variable_names); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 203, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":196
+  /* "_survival_forest.pyx":202
  *     # variable_names
  *     @property
  *     def variable_names(self):             # <<<<<<<<<<<<<<
@@ -3481,7 +3490,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_n
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":200
+/* "_survival_forest.pyx":206
  * 
  *     @variable_names.setter
  *     def variable_names(self, variable_names):             # <<<<<<<<<<<<<<
@@ -3511,17 +3520,17 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_names_2
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "_survival_forest.pyx":201
+  /* "_survival_forest.pyx":207
  *     @variable_names.setter
  *     def variable_names(self, variable_names):
  *         self.thisptr.variable_names = variable_names             # <<<<<<<<<<<<<<
  * 
  *     # -------------------------- Fitting the model -------------------------- #
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_variable_names); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 201, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_variable_names); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 207, __pyx_L1_error)
   __pyx_v_self->thisptr->variable_names = __pyx_t_1;
 
-  /* "_survival_forest.pyx":200
+  /* "_survival_forest.pyx":206
  * 
  *     @variable_names.setter
  *     def variable_names(self, variable_names):             # <<<<<<<<<<<<<<
@@ -3540,7 +3549,7 @@ static int __pyx_pf_16_survival_forest_20_SurvivalForestModel_14variable_names_2
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":204
+/* "_survival_forest.pyx":210
  * 
  *     # -------------------------- Fitting the model -------------------------- #
  *     cpdef void fit(self, vector[vector[double] ] input_data,             # <<<<<<<<<<<<<<
@@ -3591,42 +3600,42 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fit); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 204, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fit); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 210, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_16_survival_forest_20_SurvivalForestModel_5fit)) {
-        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __pyx_convert_vector_to_py_std_3a__3a_string(__pyx_v_all_data_features); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_4 = __pyx_convert_vector_to_py_std_3a__3a_string(__pyx_v_all_data_features); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_5 = __pyx_convert_vector_to_py_double(__pyx_v_case_weights); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_5 = __pyx_convert_vector_to_py_double(__pyx_v_case_weights); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = __Pyx_PyInt_From_uint32_t(__pyx_v_num_trees); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyInt_From_uint32_t(__pyx_v_num_trees); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_7 = __Pyx_PyInt_From_uint32_t(__pyx_v_mtry); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyInt_From_uint32_t(__pyx_v_mtry); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_8 = __Pyx_PyInt_From_uint32_t(__pyx_v_min_node_size); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyInt_From_uint32_t(__pyx_v_min_node_size); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_9 = __Pyx_PyInt_From_uint32_t(__pyx_v_max_depth); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyInt_From_uint32_t(__pyx_v_max_depth); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_10 = PyFloat_FromDouble(__pyx_v_alpha); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_10 = PyFloat_FromDouble(__pyx_v_alpha); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_11 = PyFloat_FromDouble(__pyx_v_minprop); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_11 = PyFloat_FromDouble(__pyx_v_minprop); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_12 = __Pyx_PyInt_From_uint32_t(__pyx_v_num_random_splits); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyInt_From_uint32_t(__pyx_v_num_random_splits); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = PyFloat_FromDouble(__pyx_v_sample_fraction_value); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_13 = PyFloat_FromDouble(__pyx_v_sample_fraction_value); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_14 = __Pyx_PyInt_From_int(__pyx_v_importance_mode_r); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyInt_From_int(__pyx_v_importance_mode_r); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_15 = __Pyx_PyInt_From_int(__pyx_v_splitrule_r); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_15 = __Pyx_PyInt_From_int(__pyx_v_splitrule_r); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_15);
-        __pyx_t_16 = __Pyx_PyBool_FromLong(__pyx_v_verbose); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyBool_FromLong(__pyx_v_verbose); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
-        __pyx_t_17 = __Pyx_PyInt_From_int(__pyx_v_seed); if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_17 = __Pyx_PyInt_From_int(__pyx_v_seed); if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_18 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_18 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_18);
-        __pyx_t_19 = __Pyx_PyBool_FromLong(__pyx_v_save_memory); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 204, __pyx_L1_error)
+        __pyx_t_19 = __Pyx_PyBool_FromLong(__pyx_v_save_memory); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 210, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_19);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_20 = __pyx_t_1; __pyx_t_21 = NULL;
@@ -3644,7 +3653,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_20)) {
           PyObject *__pyx_temp[18] = {__pyx_t_21, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9, __pyx_t_10, __pyx_t_11, __pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15, __pyx_t_16, __pyx_t_17, __pyx_t_18, __pyx_t_19};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_20, __pyx_temp+1-__pyx_t_22, 17+__pyx_t_22); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 204, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_20, __pyx_temp+1-__pyx_t_22, 17+__pyx_t_22); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 210, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3669,7 +3678,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_20)) {
           PyObject *__pyx_temp[18] = {__pyx_t_21, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9, __pyx_t_10, __pyx_t_11, __pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15, __pyx_t_16, __pyx_t_17, __pyx_t_18, __pyx_t_19};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_20, __pyx_temp+1-__pyx_t_22, 17+__pyx_t_22); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 204, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_20, __pyx_temp+1-__pyx_t_22, 17+__pyx_t_22); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 210, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3692,7 +3701,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
         } else
         #endif
         {
-          __pyx_t_23 = PyTuple_New(17+__pyx_t_22); if (unlikely(!__pyx_t_23)) __PYX_ERR(1, 204, __pyx_L1_error)
+          __pyx_t_23 = PyTuple_New(17+__pyx_t_22); if (unlikely(!__pyx_t_23)) __PYX_ERR(1, 210, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_23);
           if (__pyx_t_21) {
             __Pyx_GIVEREF(__pyx_t_21); PyTuple_SET_ITEM(__pyx_t_23, 0, __pyx_t_21); __pyx_t_21 = NULL;
@@ -3748,7 +3757,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
           __pyx_t_17 = 0;
           __pyx_t_18 = 0;
           __pyx_t_19 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_20, __pyx_t_23, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 204, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_20, __pyx_t_23, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 210, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_23); __pyx_t_23 = 0;
         }
@@ -3770,7 +3779,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
     #endif
   }
 
-  /* "_survival_forest.pyx":214
+  /* "_survival_forest.pyx":220
  *         # Declaring the variables
  *         cdef:
  *             string dependent_variable_name = all_data_features[0];             # <<<<<<<<<<<<<<
@@ -3779,7 +3788,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
  */
   __pyx_v_dependent_variable_name = (__pyx_v_all_data_features[0]);
 
-  /* "_survival_forest.pyx":215
+  /* "_survival_forest.pyx":221
  *         cdef:
  *             string dependent_variable_name = all_data_features[0];
  *             string status_variable_name = all_data_features[1];             # <<<<<<<<<<<<<<
@@ -3788,7 +3797,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
  */
   __pyx_v_status_variable_name = (__pyx_v_all_data_features[1]);
 
-  /* "_survival_forest.pyx":216
+  /* "_survival_forest.pyx":222
  *             string dependent_variable_name = all_data_features[0];
  *             string status_variable_name = all_data_features[1];
  *             int prediction_type_r = 1;             # <<<<<<<<<<<<<<
@@ -3797,7 +3806,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
  */
   __pyx_v_prediction_type_r = 1;
 
-  /* "_survival_forest.pyx":217
+  /* "_survival_forest.pyx":223
  *             string status_variable_name = all_data_features[1];
  *             int prediction_type_r = 1;
  *             bool with_replacement=True;             # <<<<<<<<<<<<<<
@@ -3806,7 +3815,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
  */
   __pyx_v_with_replacement = 1;
 
-  /* "_survival_forest.pyx":220
+  /* "_survival_forest.pyx":226
  * 
  *         # Sending the variables to C++ object to be trained
  *         self.thisptr.fit( input_data, dependent_variable_name,             # <<<<<<<<<<<<<<
@@ -3815,7 +3824,7 @@ static void __pyx_f_16_survival_forest_20_SurvivalForestModel_fit(struct __pyx_o
  */
   __pyx_v_self->thisptr->fit(__pyx_v_input_data, __pyx_v_dependent_variable_name, __pyx_v_status_variable_name, __pyx_v_all_data_features, __pyx_v_case_weights, __pyx_v_mtry, __pyx_v_num_trees, __pyx_v_min_node_size, __pyx_v_alpha, __pyx_v_minprop, __pyx_v_num_random_splits, __pyx_v_max_depth, __pyx_v_with_replacement, __pyx_v_sample_fraction_value, __pyx_v_importance_mode_r, __pyx_v_splitrule_r, __pyx_v_prediction_type_r, __pyx_v_verbose, __pyx_v_seed, __pyx_v_num_threads, __pyx_v_save_memory);
 
-  /* "_survival_forest.pyx":204
+  /* "_survival_forest.pyx":210
  * 
  *     # -------------------------- Fitting the model -------------------------- #
  *     cpdef void fit(self, vector[vector[double] ] input_data,             # <<<<<<<<<<<<<<
@@ -3933,101 +3942,101 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_5fit(PyObjec
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_all_data_features)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 1); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 1); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_case_weights)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 2); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 2); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_num_trees)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 3); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 3); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_mtry)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 4); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 4); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_min_node_size)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 5); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 5); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_max_depth)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 6); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 6); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (likely((values[7] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 7); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 7); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  8:
         if (likely((values[8] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_minprop)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 8); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 8); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  9:
         if (likely((values[9] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_num_random_splits)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 9); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 9); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 10:
         if (likely((values[10] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_sample_fraction_value)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 10); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 10); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 11:
         if (likely((values[11] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_importance_mode_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 11); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 11); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 12:
         if (likely((values[12] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_splitrule_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 12); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 12); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 13:
         if (likely((values[13] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_verbose)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 13); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 13); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 14:
         if (likely((values[14] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_seed)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 14); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 14); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 15:
         if (likely((values[15] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_num_threads)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 15); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 15); __PYX_ERR(1, 210, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case 16:
         if (likely((values[16] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_save_memory)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 16); __PYX_ERR(1, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, 16); __PYX_ERR(1, 210, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fit") < 0)) __PYX_ERR(1, 204, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fit") < 0)) __PYX_ERR(1, 210, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 17) {
       goto __pyx_L5_argtuple_error;
@@ -4050,27 +4059,27 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_5fit(PyObjec
       values[15] = PyTuple_GET_ITEM(__pyx_args, 15);
       values[16] = PyTuple_GET_ITEM(__pyx_args, 16);
     }
-    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 204, __pyx_L3_error)
-    __pyx_v_all_data_features = __pyx_convert_vector_from_py_std_3a__3a_string(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 205, __pyx_L3_error)
-    __pyx_v_case_weights = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 205, __pyx_L3_error)
-    __pyx_v_num_trees = __Pyx_PyInt_As_uint32_t(values[3]); if (unlikely((__pyx_v_num_trees == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 206, __pyx_L3_error)
-    __pyx_v_mtry = __Pyx_PyInt_As_uint32_t(values[4]); if (unlikely((__pyx_v_mtry == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 206, __pyx_L3_error)
-    __pyx_v_min_node_size = __Pyx_PyInt_As_uint32_t(values[5]); if (unlikely((__pyx_v_min_node_size == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 206, __pyx_L3_error)
-    __pyx_v_max_depth = __Pyx_PyInt_As_uint32_t(values[6]); if (unlikely((__pyx_v_max_depth == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 206, __pyx_L3_error)
-    __pyx_v_alpha = __pyx_PyFloat_AsDouble(values[7]); if (unlikely((__pyx_v_alpha == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 207, __pyx_L3_error)
-    __pyx_v_minprop = __pyx_PyFloat_AsDouble(values[8]); if (unlikely((__pyx_v_minprop == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 207, __pyx_L3_error)
-    __pyx_v_num_random_splits = __Pyx_PyInt_As_uint32_t(values[9]); if (unlikely((__pyx_v_num_random_splits == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 207, __pyx_L3_error)
-    __pyx_v_sample_fraction_value = __pyx_PyFloat_AsDouble(values[10]); if (unlikely((__pyx_v_sample_fraction_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 208, __pyx_L3_error)
-    __pyx_v_importance_mode_r = __Pyx_PyInt_As_int(values[11]); if (unlikely((__pyx_v_importance_mode_r == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 208, __pyx_L3_error)
-    __pyx_v_splitrule_r = __Pyx_PyInt_As_int(values[12]); if (unlikely((__pyx_v_splitrule_r == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 208, __pyx_L3_error)
-    __pyx_v_verbose = __Pyx_PyObject_IsTrue(values[13]); if (unlikely((__pyx_v_verbose == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 209, __pyx_L3_error)
-    __pyx_v_seed = __Pyx_PyInt_As_int(values[14]); if (unlikely((__pyx_v_seed == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 209, __pyx_L3_error)
-    __pyx_v_num_threads = __Pyx_PyInt_As_int(values[15]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 209, __pyx_L3_error)
-    __pyx_v_save_memory = __Pyx_PyObject_IsTrue(values[16]); if (unlikely((__pyx_v_save_memory == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 209, __pyx_L3_error)
+    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 210, __pyx_L3_error)
+    __pyx_v_all_data_features = __pyx_convert_vector_from_py_std_3a__3a_string(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 211, __pyx_L3_error)
+    __pyx_v_case_weights = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 211, __pyx_L3_error)
+    __pyx_v_num_trees = __Pyx_PyInt_As_uint32_t(values[3]); if (unlikely((__pyx_v_num_trees == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 212, __pyx_L3_error)
+    __pyx_v_mtry = __Pyx_PyInt_As_uint32_t(values[4]); if (unlikely((__pyx_v_mtry == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 212, __pyx_L3_error)
+    __pyx_v_min_node_size = __Pyx_PyInt_As_uint32_t(values[5]); if (unlikely((__pyx_v_min_node_size == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 212, __pyx_L3_error)
+    __pyx_v_max_depth = __Pyx_PyInt_As_uint32_t(values[6]); if (unlikely((__pyx_v_max_depth == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 212, __pyx_L3_error)
+    __pyx_v_alpha = __pyx_PyFloat_AsDouble(values[7]); if (unlikely((__pyx_v_alpha == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 213, __pyx_L3_error)
+    __pyx_v_minprop = __pyx_PyFloat_AsDouble(values[8]); if (unlikely((__pyx_v_minprop == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 213, __pyx_L3_error)
+    __pyx_v_num_random_splits = __Pyx_PyInt_As_uint32_t(values[9]); if (unlikely((__pyx_v_num_random_splits == ((uint32_t)-1)) && PyErr_Occurred())) __PYX_ERR(1, 213, __pyx_L3_error)
+    __pyx_v_sample_fraction_value = __pyx_PyFloat_AsDouble(values[10]); if (unlikely((__pyx_v_sample_fraction_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 214, __pyx_L3_error)
+    __pyx_v_importance_mode_r = __Pyx_PyInt_As_int(values[11]); if (unlikely((__pyx_v_importance_mode_r == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 214, __pyx_L3_error)
+    __pyx_v_splitrule_r = __Pyx_PyInt_As_int(values[12]); if (unlikely((__pyx_v_splitrule_r == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 214, __pyx_L3_error)
+    __pyx_v_verbose = __Pyx_PyObject_IsTrue(values[13]); if (unlikely((__pyx_v_verbose == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 215, __pyx_L3_error)
+    __pyx_v_seed = __Pyx_PyInt_As_int(values[14]); if (unlikely((__pyx_v_seed == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 215, __pyx_L3_error)
+    __pyx_v_num_threads = __Pyx_PyInt_As_int(values[15]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 215, __pyx_L3_error)
+    __pyx_v_save_memory = __Pyx_PyObject_IsTrue(values[16]); if (unlikely((__pyx_v_save_memory == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 215, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 204, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fit", 1, 17, 17, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 210, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_survival_forest._SurvivalForestModel.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4092,7 +4101,7 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_4fit(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("fit", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_16_survival_forest_20_SurvivalForestModel_fit(__pyx_v_self, __pyx_v_input_data, __pyx_v_all_data_features, __pyx_v_case_weights, __pyx_v_num_trees, __pyx_v_mtry, __pyx_v_min_node_size, __pyx_v_max_depth, __pyx_v_alpha, __pyx_v_minprop, __pyx_v_num_random_splits, __pyx_v_sample_fraction_value, __pyx_v_importance_mode_r, __pyx_v_splitrule_r, __pyx_v_verbose, __pyx_v_seed, __pyx_v_num_threads, __pyx_v_save_memory, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 204, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_16_survival_forest_20_SurvivalForestModel_fit(__pyx_v_self, __pyx_v_input_data, __pyx_v_all_data_features, __pyx_v_case_weights, __pyx_v_num_trees, __pyx_v_mtry, __pyx_v_min_node_size, __pyx_v_max_depth, __pyx_v_alpha, __pyx_v_minprop, __pyx_v_num_random_splits, __pyx_v_sample_fraction_value, __pyx_v_importance_mode_r, __pyx_v_splitrule_r, __pyx_v_verbose, __pyx_v_seed, __pyx_v_num_threads, __pyx_v_save_memory, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4109,17 +4118,28 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_4fit(struct 
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":229
+/* "_survival_forest.pyx":235
  * 
  *     # ---------------------------- Predicting ------------------------------ #
  *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the hazard functions """
  */
 
 static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_7predict_survival(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_SurvivalForestModel_predict_survival(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_skip_dispatch, struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_survival *__pyx_optional_args) {
   int __pyx_v_num_threads = ((int)-1);
+
+  /* "_survival_forest.pyx":236
+ *     # ---------------------------- Predicting ------------------------------ #
+ *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):             # <<<<<<<<<<<<<<
+ *         """ Predicting the hazard functions """
+ * 
+ */
+  bool __pyx_v_verbose = ((bool)0);
+  int __pyx_v_seed = ((int)1);
+  bool __pyx_v_save_memory = ((bool)0);
   std::vector<std::vector<double> >  __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4128,9 +4148,12 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  int __pyx_t_7;
+  PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
-  std::vector<std::vector<double> >  __pyx_t_9;
+  PyObject *__pyx_t_9 = NULL;
+  int __pyx_t_10;
+  PyObject *__pyx_t_11 = NULL;
+  std::vector<std::vector<double> >  __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4138,8 +4161,25 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
       __pyx_v_num_threads = __pyx_optional_args->num_threads;
+      if (__pyx_optional_args->__pyx_n > 1) {
+        __pyx_v_verbose = __pyx_optional_args->verbose;
+        if (__pyx_optional_args->__pyx_n > 2) {
+          __pyx_v_seed = __pyx_optional_args->seed;
+          if (__pyx_optional_args->__pyx_n > 3) {
+            __pyx_v_save_memory = __pyx_optional_args->save_memory;
+          }
+        }
+      }
     }
   }
+
+  /* "_survival_forest.pyx":235
+ * 
+ *     # ---------------------------- Predicting ------------------------------ #
+ *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
+ *         """ Predicting the hazard functions """
+ */
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -4149,66 +4189,87 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict_survival); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 229, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict_survival); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_16_survival_forest_20_SurvivalForestModel_7predict_survival)) {
-        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 229, __pyx_L1_error)
+        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 229, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
+        __pyx_t_5 = __Pyx_PyBool_FromLong(__pyx_v_verbose); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 235, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_seed); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 235, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_7 = __Pyx_PyBool_FromLong(__pyx_v_save_memory); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 235, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
-        __pyx_t_7 = 0;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-            __Pyx_INCREF(__pyx_t_6);
+        __pyx_t_8 = __pyx_t_1; __pyx_t_9 = NULL;
+        __pyx_t_10 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
+          __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_8);
+          if (likely(__pyx_t_9)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_8);
+            __Pyx_INCREF(__pyx_t_9);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_5, function);
-            __pyx_t_7 = 1;
+            __Pyx_DECREF_SET(__pyx_t_8, function);
+            __pyx_t_10 = 1;
           }
         }
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_5)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 229, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (PyFunction_Check(__pyx_t_8)) {
+          PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 235, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 229, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
+          PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 235, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else
         #endif
         {
-          __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 229, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_8);
-          if (__pyx_t_6) {
-            __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+          __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 235, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_11);
+          if (__pyx_t_9) {
+            __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
           }
           __Pyx_GIVEREF(__pyx_t_3);
-          PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_3);
+          PyTuple_SET_ITEM(__pyx_t_11, 0+__pyx_t_10, __pyx_t_3);
           __Pyx_GIVEREF(__pyx_t_4);
-          PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
+          PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_10, __pyx_t_4);
+          __Pyx_GIVEREF(__pyx_t_5);
+          PyTuple_SET_ITEM(__pyx_t_11, 2+__pyx_t_10, __pyx_t_5);
+          __Pyx_GIVEREF(__pyx_t_6);
+          PyTuple_SET_ITEM(__pyx_t_11, 3+__pyx_t_10, __pyx_t_6);
+          __Pyx_GIVEREF(__pyx_t_7);
+          PyTuple_SET_ITEM(__pyx_t_11, 4+__pyx_t_10, __pyx_t_7);
           __pyx_t_3 = 0;
           __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 229, __pyx_L1_error)
+          __pyx_t_5 = 0;
+          __pyx_t_6 = 0;
+          __pyx_t_7 = 0;
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 235, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_9 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 229, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_12 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 235, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_r = __pyx_t_9;
+        __pyx_r = __pyx_t_12;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L0;
       }
@@ -4225,21 +4286,21 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
     #endif
   }
 
-  /* "_survival_forest.pyx":233
+  /* "_survival_forest.pyx":239
  *         """ Predicting the hazard functions """
  * 
- *         return self.thisptr.predict_survival(input_data, num_threads)             # <<<<<<<<<<<<<<
+ *         return self.thisptr.predict_survival(input_data, num_threads, verbose, seed, save_memory)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_r = __pyx_v_self->thisptr->predict_survival(__pyx_v_input_data, __pyx_v_num_threads);
+  __pyx_r = __pyx_v_self->thisptr->predict_survival(__pyx_v_input_data, __pyx_v_num_threads, __pyx_v_verbose, __pyx_v_seed, __pyx_v_save_memory);
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":229
+  /* "_survival_forest.pyx":235
  * 
  *     # ---------------------------- Predicting ------------------------------ #
  *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the hazard functions """
  */
 
@@ -4251,7 +4312,10 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11);
   __Pyx_WriteUnraisable("_survival_forest._SurvivalForestModel.predict_survival", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __Pyx_pretend_to_initialize(&__pyx_r);
   __pyx_L0:;
@@ -4265,6 +4329,9 @@ static char __pyx_doc_16_survival_forest_20_SurvivalForestModel_6predict_surviva
 static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_7predict_survival(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<std::vector<double> >  __pyx_v_input_data;
   int __pyx_v_num_threads;
+  bool __pyx_v_verbose;
+  int __pyx_v_seed;
+  bool __pyx_v_save_memory;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4272,12 +4339,18 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_7predict_sur
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict_survival (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_input_data,&__pyx_n_s_num_threads,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_input_data,&__pyx_n_s_num_threads,&__pyx_n_s_verbose,&__pyx_n_s_seed,&__pyx_n_s_save_memory,0};
+    PyObject* values[5] = {0,0,0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -4296,12 +4369,36 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_7predict_sur
           PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_num_threads);
           if (value) { values[1] = value; kw_args--; }
         }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_verbose);
+          if (value) { values[2] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_seed);
+          if (value) { values[3] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_save_memory);
+          if (value) { values[4] = value; kw_args--; }
+        }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "predict_survival") < 0)) __PYX_ERR(1, 229, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "predict_survival") < 0)) __PYX_ERR(1, 235, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -4309,29 +4406,60 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_7predict_sur
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 229, __pyx_L3_error)
+    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 235, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_num_threads = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 230, __pyx_L3_error)
+      __pyx_v_num_threads = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L3_error)
     } else {
       __pyx_v_num_threads = ((int)-1);
+    }
+    if (values[2]) {
+      __pyx_v_verbose = __Pyx_PyObject_IsTrue(values[2]); if (unlikely((__pyx_v_verbose == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L3_error)
+    } else {
+
+      /* "_survival_forest.pyx":236
+ *     # ---------------------------- Predicting ------------------------------ #
+ *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):             # <<<<<<<<<<<<<<
+ *         """ Predicting the hazard functions """
+ * 
+ */
+      __pyx_v_verbose = ((bool)0);
+    }
+    if (values[3]) {
+      __pyx_v_seed = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_seed == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L3_error)
+    } else {
+      __pyx_v_seed = ((int)1);
+    }
+    if (values[4]) {
+      __pyx_v_save_memory = __Pyx_PyObject_IsTrue(values[4]); if (unlikely((__pyx_v_save_memory == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L3_error)
+    } else {
+      __pyx_v_save_memory = ((bool)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("predict_survival", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 229, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("predict_survival", 0, 1, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 235, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_survival_forest._SurvivalForestModel.predict_survival", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_survival(((struct __pyx_obj_16_survival_forest__SurvivalForestModel *)__pyx_v_self), __pyx_v_input_data, __pyx_v_num_threads);
+  __pyx_r = __pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_survival(((struct __pyx_obj_16_survival_forest__SurvivalForestModel *)__pyx_v_self), __pyx_v_input_data, __pyx_v_num_threads, __pyx_v_verbose, __pyx_v_seed, __pyx_v_save_memory);
+
+  /* "_survival_forest.pyx":235
+ * 
+ *     # ---------------------------- Predicting ------------------------------ #
+ *     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
+ *         """ Predicting the hazard functions """
+ */
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_survival(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads) {
+static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_survival(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads, bool __pyx_v_verbose, int __pyx_v_seed, bool __pyx_v_save_memory) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   std::vector<std::vector<double> >  __pyx_t_1;
@@ -4342,10 +4470,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_sur
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("predict_survival", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 1;
+  __pyx_t_2.__pyx_n = 4;
   __pyx_t_2.num_threads = __pyx_v_num_threads;
+  __pyx_t_2.verbose = __pyx_v_verbose;
+  __pyx_t_2.seed = __pyx_v_seed;
+  __pyx_t_2.save_memory = __pyx_v_save_memory;
   __pyx_t_1 = __pyx_vtabptr_16_survival_forest__SurvivalForestModel->predict_survival(__pyx_v_self, __pyx_v_input_data, 1, &__pyx_t_2); 
-  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 229, __pyx_L1_error)
+  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
@@ -4362,17 +4493,28 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_6predict_sur
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":236
+/* "_survival_forest.pyx":242
  * 
  * 
  *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the hazard functions """
  */
 
 static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_9predict_hazard(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_SurvivalForestModel_predict_hazard(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_skip_dispatch, struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_hazard *__pyx_optional_args) {
   int __pyx_v_num_threads = ((int)-1);
+
+  /* "_survival_forest.pyx":243
+ * 
+ *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):             # <<<<<<<<<<<<<<
+ *         """ Predicting the hazard functions """
+ * 
+ */
+  bool __pyx_v_verbose = ((bool)0);
+  int __pyx_v_seed = ((int)1);
+  bool __pyx_v_save_memory = ((bool)0);
   std::vector<std::vector<double> >  __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4381,9 +4523,12 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  int __pyx_t_7;
+  PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
-  std::vector<std::vector<double> >  __pyx_t_9;
+  PyObject *__pyx_t_9 = NULL;
+  int __pyx_t_10;
+  PyObject *__pyx_t_11 = NULL;
+  std::vector<std::vector<double> >  __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4391,8 +4536,25 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
       __pyx_v_num_threads = __pyx_optional_args->num_threads;
+      if (__pyx_optional_args->__pyx_n > 1) {
+        __pyx_v_verbose = __pyx_optional_args->verbose;
+        if (__pyx_optional_args->__pyx_n > 2) {
+          __pyx_v_seed = __pyx_optional_args->seed;
+          if (__pyx_optional_args->__pyx_n > 3) {
+            __pyx_v_save_memory = __pyx_optional_args->save_memory;
+          }
+        }
+      }
     }
   }
+
+  /* "_survival_forest.pyx":242
+ * 
+ * 
+ *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
+ *         """ Predicting the hazard functions """
+ */
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -4402,66 +4564,87 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict_hazard); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 236, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict_hazard); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 242, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_16_survival_forest_20_SurvivalForestModel_9predict_hazard)) {
-        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 236, __pyx_L1_error)
+        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 242, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 236, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 242, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
+        __pyx_t_5 = __Pyx_PyBool_FromLong(__pyx_v_verbose); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 242, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_seed); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 242, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_7 = __Pyx_PyBool_FromLong(__pyx_v_save_memory); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 242, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
-        __pyx_t_7 = 0;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-            __Pyx_INCREF(__pyx_t_6);
+        __pyx_t_8 = __pyx_t_1; __pyx_t_9 = NULL;
+        __pyx_t_10 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
+          __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_8);
+          if (likely(__pyx_t_9)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_8);
+            __Pyx_INCREF(__pyx_t_9);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_5, function);
-            __pyx_t_7 = 1;
+            __Pyx_DECREF_SET(__pyx_t_8, function);
+            __pyx_t_10 = 1;
           }
         }
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_5)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 236, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (PyFunction_Check(__pyx_t_8)) {
+          PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 242, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 236, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
+          PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 242, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else
         #endif
         {
-          __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 236, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_8);
-          if (__pyx_t_6) {
-            __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+          __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 242, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_11);
+          if (__pyx_t_9) {
+            __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
           }
           __Pyx_GIVEREF(__pyx_t_3);
-          PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_3);
+          PyTuple_SET_ITEM(__pyx_t_11, 0+__pyx_t_10, __pyx_t_3);
           __Pyx_GIVEREF(__pyx_t_4);
-          PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
+          PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_10, __pyx_t_4);
+          __Pyx_GIVEREF(__pyx_t_5);
+          PyTuple_SET_ITEM(__pyx_t_11, 2+__pyx_t_10, __pyx_t_5);
+          __Pyx_GIVEREF(__pyx_t_6);
+          PyTuple_SET_ITEM(__pyx_t_11, 3+__pyx_t_10, __pyx_t_6);
+          __Pyx_GIVEREF(__pyx_t_7);
+          PyTuple_SET_ITEM(__pyx_t_11, 4+__pyx_t_10, __pyx_t_7);
           __pyx_t_3 = 0;
           __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 236, __pyx_L1_error)
+          __pyx_t_5 = 0;
+          __pyx_t_6 = 0;
+          __pyx_t_7 = 0;
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 242, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_9 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_12 = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 242, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_r = __pyx_t_9;
+        __pyx_r = __pyx_t_12;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L0;
       }
@@ -4478,21 +4661,21 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
     #endif
   }
 
-  /* "_survival_forest.pyx":240
+  /* "_survival_forest.pyx":246
  *         """ Predicting the hazard functions """
  * 
- *         return self.thisptr.predict_hazard(input_data, num_threads)             # <<<<<<<<<<<<<<
+ *         return self.thisptr.predict_hazard(input_data, num_threads, verbose, seed, save_memory)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_r = __pyx_v_self->thisptr->predict_hazard(__pyx_v_input_data, __pyx_v_num_threads);
+  __pyx_r = __pyx_v_self->thisptr->predict_hazard(__pyx_v_input_data, __pyx_v_num_threads, __pyx_v_verbose, __pyx_v_seed, __pyx_v_save_memory);
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":236
+  /* "_survival_forest.pyx":242
  * 
  * 
  *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the hazard functions """
  */
 
@@ -4504,7 +4687,10 @@ static std::vector<std::vector<double> >  __pyx_f_16_survival_forest_20_Survival
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11);
   __Pyx_WriteUnraisable("_survival_forest._SurvivalForestModel.predict_hazard", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __Pyx_pretend_to_initialize(&__pyx_r);
   __pyx_L0:;
@@ -4518,6 +4704,9 @@ static char __pyx_doc_16_survival_forest_20_SurvivalForestModel_8predict_hazard[
 static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_9predict_hazard(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<std::vector<double> >  __pyx_v_input_data;
   int __pyx_v_num_threads;
+  bool __pyx_v_verbose;
+  int __pyx_v_seed;
+  bool __pyx_v_save_memory;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4525,12 +4714,18 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_9predict_haz
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict_hazard (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_input_data,&__pyx_n_s_num_threads,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_input_data,&__pyx_n_s_num_threads,&__pyx_n_s_verbose,&__pyx_n_s_seed,&__pyx_n_s_save_memory,0};
+    PyObject* values[5] = {0,0,0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -4549,12 +4744,36 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_9predict_haz
           PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_num_threads);
           if (value) { values[1] = value; kw_args--; }
         }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_verbose);
+          if (value) { values[2] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_seed);
+          if (value) { values[3] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_save_memory);
+          if (value) { values[4] = value; kw_args--; }
+        }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "predict_hazard") < 0)) __PYX_ERR(1, 236, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "predict_hazard") < 0)) __PYX_ERR(1, 242, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -4562,29 +4781,60 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_9predict_haz
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L3_error)
+    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 242, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_num_threads = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 237, __pyx_L3_error)
+      __pyx_v_num_threads = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L3_error)
     } else {
       __pyx_v_num_threads = ((int)-1);
+    }
+    if (values[2]) {
+      __pyx_v_verbose = __Pyx_PyObject_IsTrue(values[2]); if (unlikely((__pyx_v_verbose == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L3_error)
+    } else {
+
+      /* "_survival_forest.pyx":243
+ * 
+ *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):             # <<<<<<<<<<<<<<
+ *         """ Predicting the hazard functions """
+ * 
+ */
+      __pyx_v_verbose = ((bool)0);
+    }
+    if (values[3]) {
+      __pyx_v_seed = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_seed == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L3_error)
+    } else {
+      __pyx_v_seed = ((int)1);
+    }
+    if (values[4]) {
+      __pyx_v_save_memory = __Pyx_PyObject_IsTrue(values[4]); if (unlikely((__pyx_v_save_memory == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L3_error)
+    } else {
+      __pyx_v_save_memory = ((bool)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("predict_hazard", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 236, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("predict_hazard", 0, 1, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 242, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_survival_forest._SurvivalForestModel.predict_hazard", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_hazard(((struct __pyx_obj_16_survival_forest__SurvivalForestModel *)__pyx_v_self), __pyx_v_input_data, __pyx_v_num_threads);
+  __pyx_r = __pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_hazard(((struct __pyx_obj_16_survival_forest__SurvivalForestModel *)__pyx_v_self), __pyx_v_input_data, __pyx_v_num_threads, __pyx_v_verbose, __pyx_v_seed, __pyx_v_save_memory);
+
+  /* "_survival_forest.pyx":242
+ * 
+ * 
+ *     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
+ *         """ Predicting the hazard functions """
+ */
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_hazard(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads) {
+static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_hazard(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads, bool __pyx_v_verbose, int __pyx_v_seed, bool __pyx_v_save_memory) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   std::vector<std::vector<double> >  __pyx_t_1;
@@ -4595,10 +4845,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_haz
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("predict_hazard", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 1;
+  __pyx_t_2.__pyx_n = 4;
   __pyx_t_2.num_threads = __pyx_v_num_threads;
+  __pyx_t_2.verbose = __pyx_v_verbose;
+  __pyx_t_2.seed = __pyx_v_seed;
+  __pyx_t_2.save_memory = __pyx_v_save_memory;
   __pyx_t_1 = __pyx_vtabptr_16_survival_forest__SurvivalForestModel->predict_hazard(__pyx_v_self, __pyx_v_input_data, 1, &__pyx_t_2); 
-  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 236, __pyx_L1_error)
+  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 242, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
@@ -4615,17 +4868,28 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_8predict_haz
   return __pyx_r;
 }
 
-/* "_survival_forest.pyx":243
+/* "_survival_forest.pyx":249
  * 
  * 
  *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the risk values """
  */
 
 static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_11predict_risk(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static std::vector<double>  __pyx_f_16_survival_forest_20_SurvivalForestModel_predict_risk(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_skip_dispatch, struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_risk *__pyx_optional_args) {
   int __pyx_v_num_threads = ((int)-1);
+
+  /* "_survival_forest.pyx":250
+ * 
+ *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):             # <<<<<<<<<<<<<<
+ *         """ Predicting the risk values """
+ * 
+ */
+  bool __pyx_v_verbose = ((bool)0);
+  int __pyx_v_seed = ((int)1);
+  bool __pyx_v_save_memory = ((bool)0);
   std::vector<double>  __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4634,9 +4898,12 @@ static std::vector<double>  __pyx_f_16_survival_forest_20_SurvivalForestModel_pr
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  int __pyx_t_7;
+  PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
-  std::vector<double>  __pyx_t_9;
+  PyObject *__pyx_t_9 = NULL;
+  int __pyx_t_10;
+  PyObject *__pyx_t_11 = NULL;
+  std::vector<double>  __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4644,8 +4911,25 @@ static std::vector<double>  __pyx_f_16_survival_forest_20_SurvivalForestModel_pr
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
       __pyx_v_num_threads = __pyx_optional_args->num_threads;
+      if (__pyx_optional_args->__pyx_n > 1) {
+        __pyx_v_verbose = __pyx_optional_args->verbose;
+        if (__pyx_optional_args->__pyx_n > 2) {
+          __pyx_v_seed = __pyx_optional_args->seed;
+          if (__pyx_optional_args->__pyx_n > 3) {
+            __pyx_v_save_memory = __pyx_optional_args->save_memory;
+          }
+        }
+      }
     }
   }
+
+  /* "_survival_forest.pyx":249
+ * 
+ * 
+ *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
+ *         """ Predicting the risk values """
+ */
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -4655,66 +4939,87 @@ static std::vector<double>  __pyx_f_16_survival_forest_20_SurvivalForestModel_pr
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict_risk); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 243, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict_risk); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 249, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_16_survival_forest_20_SurvivalForestModel_11predict_risk)) {
-        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 243, __pyx_L1_error)
+        __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_vector_3c_double_3e___(__pyx_v_input_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 249, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 243, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_num_threads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 249, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
+        __pyx_t_5 = __Pyx_PyBool_FromLong(__pyx_v_verbose); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 249, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_seed); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 249, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_7 = __Pyx_PyBool_FromLong(__pyx_v_save_memory); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 249, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
-        __pyx_t_7 = 0;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-            __Pyx_INCREF(__pyx_t_6);
+        __pyx_t_8 = __pyx_t_1; __pyx_t_9 = NULL;
+        __pyx_t_10 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
+          __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_8);
+          if (likely(__pyx_t_9)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_8);
+            __Pyx_INCREF(__pyx_t_9);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_5, function);
-            __pyx_t_7 = 1;
+            __Pyx_DECREF_SET(__pyx_t_8, function);
+            __pyx_t_10 = 1;
           }
         }
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_5)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 243, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (PyFunction_Check(__pyx_t_8)) {
+          PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 249, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 243, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
+          PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 249, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else
         #endif
         {
-          __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 243, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_8);
-          if (__pyx_t_6) {
-            __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+          __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 249, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_11);
+          if (__pyx_t_9) {
+            __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
           }
           __Pyx_GIVEREF(__pyx_t_3);
-          PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_3);
+          PyTuple_SET_ITEM(__pyx_t_11, 0+__pyx_t_10, __pyx_t_3);
           __Pyx_GIVEREF(__pyx_t_4);
-          PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
+          PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_10, __pyx_t_4);
+          __Pyx_GIVEREF(__pyx_t_5);
+          PyTuple_SET_ITEM(__pyx_t_11, 2+__pyx_t_10, __pyx_t_5);
+          __Pyx_GIVEREF(__pyx_t_6);
+          PyTuple_SET_ITEM(__pyx_t_11, 3+__pyx_t_10, __pyx_t_6);
+          __Pyx_GIVEREF(__pyx_t_7);
+          PyTuple_SET_ITEM(__pyx_t_11, 4+__pyx_t_10, __pyx_t_7);
           __pyx_t_3 = 0;
           __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 243, __pyx_L1_error)
+          __pyx_t_5 = 0;
+          __pyx_t_6 = 0;
+          __pyx_t_7 = 0;
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 249, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_9 = __pyx_convert_vector_from_py_double(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_12 = __pyx_convert_vector_from_py_double(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 249, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_r = __pyx_t_9;
+        __pyx_r = __pyx_t_12;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L0;
       }
@@ -4731,19 +5036,19 @@ static std::vector<double>  __pyx_f_16_survival_forest_20_SurvivalForestModel_pr
     #endif
   }
 
-  /* "_survival_forest.pyx":247
+  /* "_survival_forest.pyx":253
  *         """ Predicting the risk values """
  * 
- *         return self.thisptr.predict_risk(input_data, num_threads)             # <<<<<<<<<<<<<<
+ *         return self.thisptr.predict_risk(input_data, num_threads, verbose, seed, save_memory)             # <<<<<<<<<<<<<<
  */
-  __pyx_r = __pyx_v_self->thisptr->predict_risk(__pyx_v_input_data, __pyx_v_num_threads);
+  __pyx_r = __pyx_v_self->thisptr->predict_risk(__pyx_v_input_data, __pyx_v_num_threads, __pyx_v_verbose, __pyx_v_seed, __pyx_v_save_memory);
   goto __pyx_L0;
 
-  /* "_survival_forest.pyx":243
+  /* "_survival_forest.pyx":249
  * 
  * 
  *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
- *         int num_threads= -1):
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
  *         """ Predicting the risk values """
  */
 
@@ -4755,7 +5060,10 @@ static std::vector<double>  __pyx_f_16_survival_forest_20_SurvivalForestModel_pr
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11);
   __Pyx_WriteUnraisable("_survival_forest._SurvivalForestModel.predict_risk", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __Pyx_pretend_to_initialize(&__pyx_r);
   __pyx_L0:;
@@ -4769,6 +5077,9 @@ static char __pyx_doc_16_survival_forest_20_SurvivalForestModel_10predict_risk[]
 static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_11predict_risk(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<std::vector<double> >  __pyx_v_input_data;
   int __pyx_v_num_threads;
+  bool __pyx_v_verbose;
+  int __pyx_v_seed;
+  bool __pyx_v_save_memory;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4776,12 +5087,18 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_11predict_ri
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict_risk (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_input_data,&__pyx_n_s_num_threads,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_input_data,&__pyx_n_s_num_threads,&__pyx_n_s_verbose,&__pyx_n_s_seed,&__pyx_n_s_save_memory,0};
+    PyObject* values[5] = {0,0,0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -4800,12 +5117,36 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_11predict_ri
           PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_num_threads);
           if (value) { values[1] = value; kw_args--; }
         }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_verbose);
+          if (value) { values[2] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_seed);
+          if (value) { values[3] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_save_memory);
+          if (value) { values[4] = value; kw_args--; }
+        }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "predict_risk") < 0)) __PYX_ERR(1, 243, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "predict_risk") < 0)) __PYX_ERR(1, 249, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -4813,29 +5154,60 @@ static PyObject *__pyx_pw_16_survival_forest_20_SurvivalForestModel_11predict_ri
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L3_error)
+    __pyx_v_input_data = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 249, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_num_threads = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 244, __pyx_L3_error)
+      __pyx_v_num_threads = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_num_threads == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 250, __pyx_L3_error)
     } else {
       __pyx_v_num_threads = ((int)-1);
+    }
+    if (values[2]) {
+      __pyx_v_verbose = __Pyx_PyObject_IsTrue(values[2]); if (unlikely((__pyx_v_verbose == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 250, __pyx_L3_error)
+    } else {
+
+      /* "_survival_forest.pyx":250
+ * 
+ *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):             # <<<<<<<<<<<<<<
+ *         """ Predicting the risk values """
+ * 
+ */
+      __pyx_v_verbose = ((bool)0);
+    }
+    if (values[3]) {
+      __pyx_v_seed = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_seed == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 250, __pyx_L3_error)
+    } else {
+      __pyx_v_seed = ((int)1);
+    }
+    if (values[4]) {
+      __pyx_v_save_memory = __Pyx_PyObject_IsTrue(values[4]); if (unlikely((__pyx_v_save_memory == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(1, 250, __pyx_L3_error)
+    } else {
+      __pyx_v_save_memory = ((bool)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("predict_risk", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 243, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("predict_risk", 0, 1, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 249, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_survival_forest._SurvivalForestModel.predict_risk", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_risk(((struct __pyx_obj_16_survival_forest__SurvivalForestModel *)__pyx_v_self), __pyx_v_input_data, __pyx_v_num_threads);
+  __pyx_r = __pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_risk(((struct __pyx_obj_16_survival_forest__SurvivalForestModel *)__pyx_v_self), __pyx_v_input_data, __pyx_v_num_threads, __pyx_v_verbose, __pyx_v_seed, __pyx_v_save_memory);
+
+  /* "_survival_forest.pyx":249
+ * 
+ * 
+ *     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data,             # <<<<<<<<<<<<<<
+ *         int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
+ *         """ Predicting the risk values """
+ */
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_risk(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads) {
+static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_risk(struct __pyx_obj_16_survival_forest__SurvivalForestModel *__pyx_v_self, std::vector<std::vector<double> >  __pyx_v_input_data, int __pyx_v_num_threads, bool __pyx_v_verbose, int __pyx_v_seed, bool __pyx_v_save_memory) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   std::vector<double>  __pyx_t_1;
@@ -4846,10 +5218,13 @@ static PyObject *__pyx_pf_16_survival_forest_20_SurvivalForestModel_10predict_ri
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("predict_risk", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 1;
+  __pyx_t_2.__pyx_n = 4;
   __pyx_t_2.num_threads = __pyx_v_num_threads;
+  __pyx_t_2.verbose = __pyx_v_verbose;
+  __pyx_t_2.seed = __pyx_v_seed;
+  __pyx_t_2.save_memory = __pyx_v_save_memory;
   __pyx_t_1 = __pyx_vtabptr_16_survival_forest__SurvivalForestModel->predict_risk(__pyx_v_self, __pyx_v_input_data, 1, &__pyx_t_2); 
-  __pyx_t_3 = __pyx_convert_vector_to_py_double(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 243, __pyx_L1_error)
+  __pyx_t_3 = __pyx_convert_vector_to_py_double(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
@@ -7248,16 +7623,16 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_16_survival_forest__SurvivalForestModel.predict_survival = (std::vector<std::vector<double> >  (*)(struct __pyx_obj_16_survival_forest__SurvivalForestModel *, std::vector<std::vector<double> > , int __pyx_skip_dispatch, struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_survival *__pyx_optional_args))__pyx_f_16_survival_forest_20_SurvivalForestModel_predict_survival;
   __pyx_vtable_16_survival_forest__SurvivalForestModel.predict_hazard = (std::vector<std::vector<double> >  (*)(struct __pyx_obj_16_survival_forest__SurvivalForestModel *, std::vector<std::vector<double> > , int __pyx_skip_dispatch, struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_hazard *__pyx_optional_args))__pyx_f_16_survival_forest_20_SurvivalForestModel_predict_hazard;
   __pyx_vtable_16_survival_forest__SurvivalForestModel.predict_risk = (std::vector<double>  (*)(struct __pyx_obj_16_survival_forest__SurvivalForestModel *, std::vector<std::vector<double> > , int __pyx_skip_dispatch, struct __pyx_opt_args_16_survival_forest_20_SurvivalForestModel_predict_risk *__pyx_optional_args))__pyx_f_16_survival_forest_20_SurvivalForestModel_predict_risk;
-  if (PyType_Ready(&__pyx_type_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 57, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 63, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_16_survival_forest__SurvivalForestModel.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_16_survival_forest__SurvivalForestModel.tp_dictoffset && __pyx_type_16_survival_forest__SurvivalForestModel.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_16_survival_forest__SurvivalForestModel.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_16_survival_forest__SurvivalForestModel.tp_dict, __pyx_vtabptr_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 57, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_SurvivalForestModel, (PyObject *)&__pyx_type_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 57, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 57, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_16_survival_forest__SurvivalForestModel.tp_dict, __pyx_vtabptr_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 63, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_SurvivalForestModel, (PyObject *)&__pyx_type_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 63, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 63, __pyx_L1_error)
   __pyx_ptype_16_survival_forest__SurvivalForestModel = &__pyx_type_16_survival_forest__SurvivalForestModel;
   __Pyx_RefNannyFinishContext();
   return 0;

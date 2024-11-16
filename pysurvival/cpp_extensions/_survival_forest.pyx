@@ -45,11 +45,17 @@ cdef extern from "survival_forest.h" namespace "ranger":
              double sample_fraction_value, int importance_mode_r, int splitrule_r, 
              int prediction_type_r, bool verbose, int seed, int num_threads, bool save_memory);
 
-        vector[vector[double] ] predict_survival( vector [vector[double] ] input_data, int num_threads);
+        vector[vector[double] ] predict_survival( vector [vector[double] ] input_data, 
+            int num_threads, bool verbose, int seed, bool save_memory
+        );
 
-        vector[vector[double] ] predict_hazard( vector [vector[double] ] input_data, int num_threads);
+        vector[vector[double] ] predict_hazard( vector [vector[double] ] input_data, 
+            int num_threads, bool verbose, int seed, bool save_memory
+        );
 
-        vector[double] predict_risk( vector [vector[double] ] input_data, int num_threads);
+        vector[double] predict_risk( vector [vector[double] ] input_data, 
+            int num_threads, bool verbose, int seed, bool save_memory
+        );
 
 
 
@@ -227,21 +233,21 @@ cdef class _SurvivalForestModel :
 
     # ---------------------------- Predicting ------------------------------ #
     cpdef vector[vector[double]] predict_survival(self, vector[vector[double]] input_data, 
-        int num_threads= -1):
+        int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
         """ Predicting the hazard functions """
 
-        return self.thisptr.predict_survival(input_data, num_threads)
+        return self.thisptr.predict_survival(input_data, num_threads, verbose, seed, save_memory)
 
 
     cpdef vector[vector[double]] predict_hazard(self, vector[vector[double]] input_data, 
-        int num_threads= -1):
+        int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
         """ Predicting the hazard functions """
 
-        return self.thisptr.predict_hazard(input_data, num_threads)
+        return self.thisptr.predict_hazard(input_data, num_threads, verbose, seed, save_memory)
 
 
     cpdef vector[double] predict_risk(self, vector[vector[double]] input_data, 
-        int num_threads= -1):
+        int num_threads= -1, bool verbose = False, int seed = 1, bool save_memory = False):
         """ Predicting the risk values """
 
-        return self.thisptr.predict_risk(input_data, num_threads)
+        return self.thisptr.predict_risk(input_data, num_threads, verbose, seed, save_memory)

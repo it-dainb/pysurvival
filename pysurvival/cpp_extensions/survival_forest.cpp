@@ -1208,9 +1208,9 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
 }
 
-
-
-  std::vector<std::vector<double> > SurvivalForestModel::predict_survival( std::vector <std::vector<double> > input_data, int num_threads){
+  std::vector<std::vector<double> > SurvivalForestModel::predict_survival( std::vector <std::vector<double> > input_data, 
+      int num_threads, bool verbose, int seed, bool save_memory
+  ){
 
     std::vector<std::string> variable_names = this->variable_names;
      std::string dependent_variable_name = this->variable_names[this->dependent_varID];
@@ -1232,9 +1232,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
      int importance_mode_r = 0;//1;
      int splitrule_r= 1; //5; 
      int prediction_type_r=1; 
-     bool verbose=false;
-     int seed = 1;
-     bool save_memory = false;
 
     const std::vector<std::vector<std::vector<double>>> predictions = this->predict(input_data,
       dependent_variable_name, status_variable_name, variable_names, case_weights, 
@@ -1265,7 +1262,9 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
 
 
-  std::vector<std::vector<double> > SurvivalForestModel::predict_hazard( std::vector <std::vector<double> > input_data, int num_threads){
+  std::vector<std::vector<double> > SurvivalForestModel::predict_hazard( std::vector <std::vector<double> > input_data, 
+    int num_threads, bool verbose, int seed, bool save_memory
+  ){
 
 
     std::vector<std::string> variable_names = this->variable_names;
@@ -1288,9 +1287,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
      int importance_mode_r = 1;
      int splitrule_r=5; 
      int prediction_type_r=1; 
-     bool verbose=false;
-     int seed = 1;
-     bool save_memory = false;
 
     const std::vector<std::vector<std::vector<double>>> predictions = this->predict(input_data,
       dependent_variable_name, status_variable_name, variable_names, case_weights, 
@@ -1320,7 +1316,9 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
   }
 
 
-  std::vector<double> SurvivalForestModel::predict_risk( std::vector <std::vector<double> > input_data, int num_threads){
+  std::vector<double> SurvivalForestModel::predict_risk( std::vector <std::vector<double> > input_data, 
+    int num_threads, bool verbose, int seed, bool save_memory
+  ){
 
 
     std::vector<std::string> variable_names = this->variable_names;
@@ -1343,9 +1341,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
      int importance_mode_r = 1;
      int splitrule_r=5; 
      int prediction_type_r=1; 
-     bool verbose=false;
-     int seed = 1;
-     bool save_memory = false;
 
     const std::vector<std::vector<std::vector<double>>> predictions = this->predict(input_data,
       dependent_variable_name, status_variable_name, variable_names, case_weights, 
