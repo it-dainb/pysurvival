@@ -79,8 +79,8 @@ def concordance_index(model, X, T, E, include_ties = True,
         return results
 
 
-def c_index(model, X, T, E, include_ties = True, additional_results=False):
-    return concordance_index(model, X, T, E, include_ties, additional_results)
+def c_index(model, X, T, E, include_ties = True, additional_results=False, **kwargs):
+    return concordance_index(model, X, T, E, include_ties, additional_results, **kwargs)
 
 
 def brier_score(model, X, T, E, t_max=None, use_mean_point=True, **kwargs):
@@ -165,13 +165,13 @@ def brier_score(model, X, T, E, t_max=None, use_mean_point=True, **kwargs):
     return (times, brier_scores)
 
 
-def integrated_brier_score(model, X, T, E, t_max=None, use_mean_point=True):
+def integrated_brier_score(model, X, T, E, t_max=None, use_mean_point=True, **kwargs):
     """ The Integrated Brier Score (IBS) provides an overall calculation of 
         the model performance at all available times.
     """
 
     # Computing the brier scores
-    times, brier_scores = brier_score(model, X, T, E, t_max, use_mean_point)
+    times, brier_scores = brier_score(model, X, T, E, t_max, use_mean_point, **kwargs)
 
     # Getting the proper value of t_max
     if t_max is None:
@@ -185,8 +185,8 @@ def integrated_brier_score(model, X, T, E, t_max=None, use_mean_point=True):
     return ibs_value
 
 
-def ibs(model, X, T, E, t_max=None, use_mean_point = True):
-    return integrated_brier_score(model, X, T, E, t_max, use_mean_point)
+def ibs(model, X, T, E, t_max=None, use_mean_point = True, **kwargs):
+    return integrated_brier_score(model, X, T, E, t_max, use_mean_point, **kwargs)
 
 
 
