@@ -496,13 +496,13 @@ class RandomSurvivalForestModel(BaseSurvivalForest):
     def fit( self, X, T, E, max_features = 'sqrt', max_depth = 5, 
             min_node_size = 10, num_threads = -1, weights = None, 
             sample_size_pct = 0.63, importance_mode = 'normalized_permutation', 
-            seed = None, save_memory=False ):
+            seed = None, save_memory=False, verbose = False):
 
         return super(RandomSurvivalForestModel, self).fit(X=X, T=T, E=E, 
             max_features=max_features, max_depth=max_depth, weights = weights, 
             min_node_size=min_node_size, num_threads=num_threads, 
             sample_size_pct = sample_size_pct, seed = seed, 
-            save_memory=save_memory, importance_mode = importance_mode)
+            save_memory=save_memory, importance_mode = importance_mode, verbose = verbose)
 
 
 class ExtraSurvivalTreesModel(BaseSurvivalForest):
@@ -514,14 +514,14 @@ class ExtraSurvivalTreesModel(BaseSurvivalForest):
             min_node_size = 10, num_threads = -1, weights = None, 
             sample_size_pct = 0.63,  num_random_splits = 100, 
             importance_mode = 'normalized_permutation', 
-            seed = None, save_memory=False ):
+            seed = None, save_memory=False, verbose = False ):
 
         return super(ExtraSurvivalTreesModel, self).fit(X=X, T=T, E=E, 
             max_features=max_features, max_depth=max_depth, weights = weights, 
             min_node_size=min_node_size, num_threads=num_threads, 
             sample_size_pct = sample_size_pct, seed = seed, 
             num_random_splits = num_random_splits, save_memory=save_memory,
-            importance_mode = importance_mode)
+            importance_mode = importance_mode, verbose = verbose)
 
 
 class ConditionalSurvivalForestModel(BaseSurvivalForest):
@@ -533,11 +533,11 @@ class ConditionalSurvivalForestModel(BaseSurvivalForest):
             min_node_size = 10, num_threads = -1, weights = None, 
             sample_size_pct = 0.63, alpha = 0.5, minprop=0.1,
             importance_mode = 'normalized_permutation', seed = None, 
-            save_memory=False ):
+            save_memory=False, verbose = False ):
 
         return super(ConditionalSurvivalForestModel, self).fit(X=X, T=T, E=E, 
             max_features = max_features, max_depth = max_depth, 
             min_node_size = min_node_size, num_threads = num_threads, 
             weights = weights, sample_size_pct = sample_size_pct, 
             alpha = alpha, minprop=minprop, importance_mode = importance_mode, 
-            seed = seed, save_memory=save_memory )
+            seed = seed, save_memory=save_memory, verbose = verbose )
