@@ -195,7 +195,7 @@ def display_baseline_simulations(sim_model, figure_size=(18, 5)):
 
 
 def integrated_brier_score(model, X, T, E, t_max=None, use_mean_point=True,
-    figure_size=(20, 6.5)):
+    figure_size=(20, 6.5), plot=True):
     """ The Integrated Brier Score (IBS) provides an overall calculation of 
         the model performance at all available times.
     """
@@ -213,16 +213,17 @@ def integrated_brier_score(model, X, T, E, t_max=None, use_mean_point=True,
     ibs_value = np.trapz(brier_scores, times)/t_max 
 
     # Displaying the Brier Scores at different t 
-    title = 'Prediction error curve with IBS(t = {:.1f}) = {:.2f}'
-    title = title.format(t_max, ibs_value)
-    fig, ax = plt.subplots(figsize=figure_size)
-    ax.plot( times, brier_scores, color = 'blue', lw = 3)
-    ax.set_xlim(-0.01, max(times))
-    ax.axhline(y=0.25, ls = '--', color = 'red')
-    ax.text(0.90*max(times), 0.235, '0.25 limit', fontsize=20, color='brown', 
-        fontweight='bold')
-    plt.title(title, fontsize=20)
-    plt.show()
+    if plot:
+        title = 'Prediction error curve with IBS(t = {:.1f}) = {:.2f}'
+        title = title.format(t_max, ibs_value)
+        fig, ax = plt.subplots(figsize=figure_size)
+        ax.plot( times, brier_scores, color = 'blue', lw = 3)
+        ax.set_xlim(-0.01, max(times))
+        ax.axhline(y=0.25, ls = '--', color = 'red')
+        ax.text(0.90*max(times), 0.235, '0.25 limit', fontsize=20, color='brown', 
+            fontweight='bold')
+        plt.title(title, fontsize=20)
+        plt.show()
 
     return ibs_value
 
