@@ -229,7 +229,7 @@ def integrated_brier_score(model, X, T, E, t_max=None, use_mean_point=True,
 
 
 def compare_to_actual(model, X, T, E, times = None, is_at_risk = False,  
-    figure_size=(16, 6), metrics = ['rmse', 'mean', 'median'], **kwargs):
+    figure_size=(16, 6), metrics = ['rmse', 'mean', 'median'], plot=True, **kwargs):
     """
     Comparing the actual and predicted number of units at risk and units 
     experiencing an event at each time t.
@@ -392,23 +392,24 @@ def compare_to_actual(model, X, T, E, times = None, is_at_risk = False,
                 raise NotImplementedError(error)
 
     # Plotting
-    fig, ax = plt.subplots(figsize=figure_size)
-    ax.plot(times, actual, color='red', label='Actual', 
-        alpha=0.8, lw = 3)
-    ax.plot(times, predicted,color='blue', label='Predicted', 
-        alpha=0.8, lw = 3)
-    plt.xlim(0, max(T))
+    if plot:
+        fig, ax = plt.subplots(figsize=figure_size)
+        ax.plot(times, actual, color='red', label='Actual', 
+            alpha=0.8, lw = 3)
+        ax.plot(times, predicted,color='blue', label='Predicted', 
+            alpha=0.8, lw = 3)
+        plt.xlim(0, max(T))
 
-    # Filling the areas between the Survival and Confidence Intervals curves
-    plt.fill_between(times, actual, actual_lower, 
-        label='Confidence Intervals - Lower', color='red', alpha =0.2)
-    plt.fill_between(times, actual, actual_upper, 
-        label='Confidence Intervals - Upper', color='red', alpha =0.2)
+        # Filling the areas between the Survival and Confidence Intervals curves
+        plt.fill_between(times, actual, actual_lower, 
+            label='Confidence Intervals - Lower', color='red', alpha =0.2)
+        plt.fill_between(times, actual, actual_upper, 
+            label='Confidence Intervals - Upper', color='red', alpha =0.2)
 
-    # Finalizing the chart
-    plt.title(title, fontsize = 15)
-    plt.legend(fontsize = 15)
-    plt.show()
+        # Finalizing the chart
+        plt.title(title, fontsize = 15)
+        plt.legend(fontsize = 15)
+        plt.show()
 
     return results
 
