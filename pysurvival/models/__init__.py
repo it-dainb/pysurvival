@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 import copy
 import tempfile
-import pyarrow as pa
 import os
 import torch
 import zipfile
@@ -10,7 +9,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from pysurvival import utils
 from pysurvival.utils._functions import _get_time_buckets
-
+import pickle
 
 class BaseModel(object):
     """ Base class for all estimators in pysurvival. It should not be used on
@@ -80,8 +79,7 @@ class BaseModel(object):
         # Serializing the parameters
         elements_to_save.append('parameters')
         with open('parameters' , 'wb') as f:
-            serialized_to_save = pa.serialize(parameters_to_save)
-            f.write(serialized_to_save.to_buffer())
+            pickle.dump(parameters_to_save, f)
             
         # Saving the torch model if exists
         if 'model' in self.__dict__.keys():
@@ -141,7 +139,7 @@ class BaseModel(object):
             # Loading the parameters
             if 'parameters' in file_name.lower():
                 content = input_zip.read( 'parameters' )
-                self.__dict__ = copy.deepcopy(pa.deserialize(content))
+                self.__dict__ = copy.deepcopy(pickle.loads(content))
                 elements_to_load.append(temp_folder +'parameters')
 
                 # If a scaler was available then load it too

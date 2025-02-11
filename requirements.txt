@@ -15,7 +15,6 @@ packaging==24.2
 pandas==2.2.3
 pillow==11.0.0
 progressbar==2.5
-pyarrow
 pyparsing==3.2.0
 python-dateutil==2.9.0.post0
 pytz==2024.2
@@ -27,3 +26,4 @@ threadpoolctl==3.5.0
 torch==2.5.1
 typing_extensions==4.12.2
 tzdata==2024.2
+pickle
