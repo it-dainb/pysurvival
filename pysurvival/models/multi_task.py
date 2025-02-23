@@ -423,7 +423,11 @@ class BaseMultiTaskModel(BaseModel):
         div = np.repeat(np.sum(phi, 1).reshape(-1, 1), phi.shape[1], axis=1)
         density = (phi/div)
         Survival = np.dot(density, Triangle2)
-        hazard = density[:, :-1]/Survival[:, 1:]
+
+        # hazard = density[:, :-1]/Survival[:, 1:]
+        # Compute hazard at boundary
+        epsilon = 1e-10  # to avoid division by zero
+        hazard = density / (Survival + epsilon)
 
         # Returning the full functions of just one time point
         if t is None:
